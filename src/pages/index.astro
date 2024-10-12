@@ -41,11 +41,15 @@ import Card from "../components/Card.astro";
     background-color: #2e2e2e;
     color: #a8a270;
     padding: 1rem;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     z-index: 10;
     width: 100%;
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+
+    background-image: url(/imgs/comic_texture.png);
+    background-repeat: repeat; /* Repetir la imagen */
+    background-size: contain; /* Ajustar el tamaño de la imagen */
+    background-blend-mode: multiply; /* Combina el color de fondo con la textura */
   }
 
   /* Sticky secondary header */
@@ -54,10 +58,14 @@ import Card from "../components/Card.astro";
     color: #303224;
     padding: 1rem;
     text-align: center;
-    position: sticky;
+    /* position: sticky; */
     top: 5rem; /* Debajo del primer header */
     z-index: 9;
     width: 100%;
+    background-image: url(/imgs/comic_texture.png);
+    background-repeat: repeat; /* Repetir la imagen */
+    background-size: contain; /* Ajustar el tamaño de la imagen */
+    background-blend-mode: multiply; /* Combina el color de fondo con la textura */
   }
 
   /* Main content */
@@ -66,9 +74,17 @@ import Card from "../components/Card.astro";
     color: white;
     font-size: 20px;
     line-height: 1.6;
-    max-width: 1200px;
+    /* max-width: 1200px; */
+    background: #d7c98c;
     margin: auto;
     height: 100%; /* Hace que el contenido ocupe el alto de la pantalla */
+    background-image: url(/imgs/comic_texture.png);
+    background-repeat: repeat; /* Repetir la imagen */
+    background-size: contain; /* Ajustar el tamaño de la imagen */
+    background-blend-mode: multiply; /* Combina el color de fondo con la textura */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 32px;
   }
 
   /* Responsiveness */
