@@ -8,53 +8,87 @@ import Card from "../components/Card.astro";
     <h1>PITERXUS MONSTER MAKER</h1>
     <h2>I turn your nightmares into art!</h2>
   </header>
-  <!-- <div class="header_2">
-    <h2>I turn your nightmares into art!</h2>
-  </div> -->
   <div class="header_3">
     <h3>
       I have been a horror movie fan for as long as I can remember. For that
-      reason I have always tried to bring those monsters that I love so much to
+      reason, I have always tried to bring those monsters that I love so much to
       reality. If you like my work it is at your disposal. Orders accepted.
     </h3>
   </div>
-  <main></main>
+  <main>
+    <!-- Main content goes here -->
+  </main>
 </Layout>
 
 <style>
-  main {
-    /* margin: auto; */
-    /* padding: 1rem; */
-    /* width: 800px;
-    max-width: calc(100% - 2rem); */
-
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
+  /* Estilo global */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    background: #d7c98c; /* Fondo de color */
+    overflow-x: hidden; /* Evitar el desbordamiento horizontal */
   }
+
+  /* Sticky header */
   header {
     text-align: center;
     background-color: #2e2e2e;
     color: #a8a270;
-    height: 10vh;
     padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); /* Sombra opcional */
   }
-  /* header h1 {
-    font-size: 4rem;
-   
-  } */
-  .header_2 {
-    background-color: #929069;
-    color: #303224;
-    text-align: center;
-    padding: 1rem;
-    height: 5vh;
-  }
+
+  /* Sticky secondary header */
   .header_3 {
     background-color: #afa874;
     color: #303224;
-    height: 5vh;
     padding: 1rem;
     text-align: center;
+    position: sticky;
+    top: 5rem; /* Debajo del primer header */
+    z-index: 9;
+    width: 100%;
+  }
+
+  /* Main content */
+  main {
+    padding: 2rem;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: auto;
+    height: 100%; /* Hace que el contenido ocupe el alto de la pantalla */
+  }
+
+  /* Responsiveness */
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2,
+    h3 {
+      font-size: 1rem;
+    }
   }
 </style>
