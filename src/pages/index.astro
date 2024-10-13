@@ -14,6 +14,7 @@ import Card from "../components/Card.astro";
       reason, I have always tried to bring those monsters that I love so much to
       reality. If you like my work it is at your disposal. Orders accepted.
     </h3>
+    <img class="cart" src="/imgs/skeleton_shopping_cart.png" alt="" />
   </div>
   <main>
     <div class="card_test">
@@ -113,8 +114,20 @@ import Card from "../components/Card.astro";
     background-repeat: repeat; /* Repetir la imagen */
     background-size: contain; /* Ajustar el tamaño de la imagen */
     background-blend-mode: multiply; /* Combina el color de fondo con la textura */
+    display: flex;
+    justify-content: center;
   }
 
+  .cart{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #303224;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    filter: sepia(100%); /* Aplica el filtro sepia al 100% */
+    object-fit: cover;
+    margin-left: 10px;
+  }
   /* Main content */
   main {
     padding: 2rem;
