@@ -124,10 +124,9 @@ import Card from "../components/Card.astro";
     /* max-width: 1200px; */
     background: #d7c98c;
     margin: auto;
-    height: 100%; /* Hace que el contenido ocupe el alto de la pantalla */
     background-image: url(/imgs/comic_texture.png);
-    background-repeat: repeat; /* Repetir la imagen */
-    background-size: contain; /* Ajustar el tamaño de la imagen */
+    background-repeat: no repeat; /* Repetir la imagen */
+    background-size: cover; /* Ajustar el tamaño de la imagen */
     background-blend-mode: multiply; /* Combina el color de fondo con la textura */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -151,7 +150,7 @@ import Card from "../components/Card.astro";
     border: 1px solid #303224;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     filter: sepia(100%); /* Aplica el filtro sepia al 100% */
-    object-fit:cover;
+    object-fit: cover;
   }
 
   img:hover {
