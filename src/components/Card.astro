@@ -1,30 +1,19 @@
 ---
-// Aquí puedes definir las props si deseas pasar imágenes dinámicamente en lugar de tenerlas estáticas
-const { frontImg, backImg, price } = Astro.props;
+// Recibe una imagen y el precio
+const { imgSrc, price } = Astro.props;
 ---
 
-<div class="container">
-  <div class="card_test">
-    <div class="card_front">
-      <img class="front_img" src={frontImg} alt="Front Image" />
-    </div>
-    <div class="card_front card_front--back">
-      <img class="back_img" src={backImg} alt="Back Image" />
-    </div>
-    <p>{price} €</p>
+<div class="card_test">
+  <div class="card_front">
+    <img class="front_img sepia" src={imgSrc} alt="Front Image" />
   </div>
+  <div class="card_front card_front--back">
+    <img class="back_img" src={imgSrc} alt="Back Image" />
+  </div>
+  <p>{price} €</p>
 </div>
 
 <style>
-  .container {
-    --width: 240px;
-    --height: 330px;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    perspective: 300px;
-  }
-
   .card_test {
     position: relative;
     width: var(--width);
@@ -60,6 +49,10 @@ const { frontImg, backImg, price } = Astro.props;
     height: var(--height);
     object-fit: cover;
     border-radius: 1rem;
+  }
+
+  .sepia {
+    filter: sepia(100%);
   }
 
   p {
