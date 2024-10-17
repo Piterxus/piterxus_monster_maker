@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <Layout title="Piterxus Monster Maker">
@@ -14,21 +15,18 @@ import Card from "../components/Card.astro";
       reason, I have always tried to bring those monsters that I love so much to
       reality. If you like my work it is at your disposal. Orders accepted.
     </h3>
-    <div class="tooltip-container">
-      <span class="tooltip-text">Cart</span>
-      <img class="icon" src="/imgs/skeleton_shopping_cart.png" alt="" />
-    </div>
-    <div class="tooltip-container">
-      <span class="tooltip-text">Contact</span>
-      <img class="icon" src="/imgs/contact_icon.png" alt="" />
-    </div>
-    <div class="tooltip-container">
-      <span class="tooltip-text">Requests</span>
-      <img class="icon" src="/imgs/requests_icon.png" alt="" />
-    </div>
-    <!-- <img class="icon" src="/imgs/skeleton_shopping_cart.png" alt="" />
-    <img class="icon" src="/imgs/contact_icon.png" alt="" />
-    <img class="icon" src="/imgs/requests_icon.png" alt="" /> -->
+
+    <Icon
+      Imgsrc="/imgs/skeleton_shopping_cart.png"
+      alt="Cart"
+      tooltipText="Cart"
+    />
+    <Icon Imgsrc="/imgs/contact_icon.png" alt="Contact" tooltipText="Contact" />
+    <Icon
+      Imgsrc="/imgs/requests_icon.png"
+      alt="Requests"
+      tooltipText="Requests"
+    />
   </div>
   <main>
     <Card imgSrc="/imgs/pazuzu.png" price="3000" />
