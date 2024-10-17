@@ -19,11 +19,13 @@ import Card from "../components/Card.astro";
     <img class="icon" src="/imgs/requests_icon.png" alt="" />
   </div>
   <main>
-    <div class="card_test">
-      <img src="/imgs/pazuzu.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
+    
+    <Card imgSrc="/imgs/pazuzu.png" price="3000" />
+    <Card imgSrc="/imgs/pazuzu.png" price="3000" />
+    <Card imgSrc="/imgs/pazuzu.png" price="3000" />
+    <Card imgSrc="/imgs/pazuzu.png" price="3000" />
+    <Card imgSrc="/imgs/pazuzu.png" price="3000" />
+    <!-- <div class="card_test">
       <img src="/imgs/critter.png" alt="" />
       <p>300 €</p>
     </div>
@@ -67,7 +69,7 @@ import Card from "../components/Card.astro";
       <img src="/imgs/cramps.png" alt="" />
       <p>300 €</p>
     </div>
-    <Card imgSrc="/imgs/pazuzu.png" price="300" />
+    <Card imgSrc="/imgs/pazuzu.png" price="3000" /> -->
   </main>
 </Layout>
 
@@ -150,6 +152,7 @@ import Card from "../components/Card.astro";
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
+    height: 100%;
   }
 
   /* Responsiveness */
@@ -162,28 +165,7 @@ import Card from "../components/Card.astro";
     font-size: 1.2rem;
   }
 
-  img {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    border: 1px solid #303224;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    filter: sepia(100%); /* Aplica el filtro sepia al 100% */
-    object-fit: cover;
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-  }
 
-  img:hover {
-    filter: none; /* Elimina el filtro al hacer hover */
-  }
-
-  .card_test {
-    background-color: #303224;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-}
 
   @media (max-width: 768px) {
     h1 {
