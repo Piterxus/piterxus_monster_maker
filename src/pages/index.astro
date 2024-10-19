@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <Layout title="Piterxus Monster Maker">
@@ -14,59 +15,32 @@ import Card from "../components/Card.astro";
       reason, I have always tried to bring those monsters that I love so much to
       reality. If you like my work it is at your disposal. Orders accepted.
     </h3>
-    <img class="icon" src="/imgs/skeleton_shopping_cart.png" alt="" />
-    <img class="icon" src="/imgs/contact_icon.png" alt="" />
-    <img class="icon" src="/imgs/requests_icon.png" alt="" />
+
+    <Icon
+      Imgsrc="/imgs/skeleton_shopping_cart.png"
+      alt="Cart"
+      tooltipText="Cart"
+    />
+    <Icon Imgsrc="/imgs/contact_icon.png" alt="Contact" tooltipText="Contact" />
+    <Icon
+      Imgsrc="/imgs/requests_icon.png"
+      alt="Requests"
+      tooltipText="Requests"
+    />
   </div>
   <main>
-    <div class="card_test">
-      <img src="/imgs/pazuzu.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
-      <img src="/imgs/critter.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
-      <img src="/imgs/man_bat.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
-      <img src="/imgs/lagoon.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
-      <img src="/imgs/mark.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
-      <img src="/imgs/plan.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
-      <img src="/imgs/misfits.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
-      <img src="/imgs/divine.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
-      <img src="/imgs/batman.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
-      <img src="/imgs/braindead.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
-      <img src="/imgs/cromos.png" alt="" />
-      <p>300 €</p>
-    </div>
-    <div class="card_test">
-      <img src="/imgs/cramps.png" alt="" />
-      <p>300 €</p>
-    </div>
+    <Card imgSrc="/imgs/pazuzu.png" price="3000" />
+    <Card imgSrc="/imgs//critter.png" price="3000" />
+    <Card imgSrc="/imgs/man_bat.png" price="3000" />
+    <Card imgSrc="/imgs/lagoon.png" price="3000" />
+    <Card imgSrc="/imgs/mark.png" price="3000" />
+    <Card imgSrc="/imgs/plan.png" price="3000" />
+    <Card imgSrc="/imgs/misfits.png" price="3000" />
+    <Card imgSrc="/imgs/divine.png" price="3000" />
+    <Card imgSrc="/imgs/batman.png" price="3000" />
+    <Card imgSrc="/imgs/braindead.png" price="3000" />
+    <Card imgSrc="/imgs/cromos.png" price="3000" />
+    <Card imgSrc="/imgs/cramps.png" price="3000" />
   </main>
 </Layout>
 
@@ -120,19 +94,7 @@ import Card from "../components/Card.astro";
     justify-content: center;
   }
 
-  .icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    border: 1px solid #303224;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    filter: sepia(100%); /* Aplica el filtro sepia al 100% */
-    object-fit: cover;
-    margin-left: 10px;
-  }
-  .icon:hover {
-    scale: 1.1;
-  }
+
   /* Main content */
   main {
     padding: 2rem;
@@ -149,6 +111,7 @@ import Card from "../components/Card.astro";
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
+
   }
 
   /* Responsiveness */
@@ -159,37 +122,6 @@ import Card from "../components/Card.astro";
   h2,
   h3 {
     font-size: 1.2rem;
-  }
-
-  img {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    border: 1px solid #303224;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    filter: sepia(100%); /* Aplica el filtro sepia al 100% */
-    object-fit: cover;
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-  }
-
-  img:hover {
-    filter: none; /* Elimina el filtro al hacer hover */
-   
-  }
-
-  .card_test {
-    background-color: #303224;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-
-    /* position: relative;
-    overflow: hidden;
-    background-image: url(/imgs/texture.jpg); 
-    background-size: cover;
-    background-blend-mode: multiply; 
-    color: #fff; */
   }
 
   @media (max-width: 768px) {

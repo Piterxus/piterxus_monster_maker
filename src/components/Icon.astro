@@ -1,0 +1,55 @@
+---
+const { Imgsrc, alt, tooltipText } = Astro.props;
+---
+
+<div class="tooltip-container">
+  <span class="tooltip-text">{tooltipText}</span>
+  <img class="icon" src={Imgsrc} alt={alt} />
+</div>
+
+<style>
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Posiciona el tooltip encima del elemento */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: 300;
+    text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.8);
+  }
+
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #303224;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    filter: sepia(100%); /* Aplica el filtro sepia al 100% */
+    object-fit: cover;
+    margin-left: 10px;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+  }
+  .icon:hover {
+    scale: 1.1;
+    filter: none;
+  }
+</style>
