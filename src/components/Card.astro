@@ -1,11 +1,19 @@
 ---
 // Recibe una imagen y el precio
 const { imgSrc, price } = Astro.props;
+import Icon from "../components/Icon.astro";
 ---
 
 <div class="card_test">
   <img src={imgSrc} alt="" />
-  <p>{price} €</p>
+  <div class="add_cart">
+    <p>{price} €</p>
+    <Icon
+      Imgsrc="/imgs/skeleton_shopping_add_cart.png"
+      alt="Add to cart"
+      tooltipText="Add to cart"
+    />
+  </div>
 </div>
 
 <style>
@@ -32,6 +40,12 @@ const { imgSrc, price } = Astro.props;
     text-align: center;
     width: 300px;
     height: 350px;
+  }
+  .add_cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
   }
 
   p {
