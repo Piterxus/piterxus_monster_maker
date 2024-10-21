@@ -1,6 +1,6 @@
 import { isCartOpen, addCartItem } from '../cartStore';
 import type { CartItemDisplayInfo } from '../cartStore';
-import type { ReactNode } from 'react';  // Importa ReactNode en lugar de Children
+import type { ReactNode } from 'react';  // Importa ReactNode en lugar de Children ya que que Children en React no es un tipo, sino un valor que hace referencia al API de utilidades para manipular los hijos de un componente.
 
 type Props = {
     item: CartItemDisplayInfo;
