@@ -8,10 +8,14 @@ type Props = {
 };
 
 export default function AddToCartForm({ item, children }: Props) {
-    function addToCart(e: React.FormEvent<HTMLFormElement>) {  // Ajusta el tipo del evento
+    // function addToCart(e: React.FormEvent<HTMLFormElement>) {  // Ajusta el tipo del evento
+    //     e.preventDefault();
+    //     isCartOpen.set(true);
+    //     addCartItem(item);
+    // }
+    function addToCart(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        isCartOpen.set(true);
-        addCartItem(item);
+        console.log('Añadir al carrito');
     }
 
     return <form onSubmit={addToCart}>{children}</form>;
