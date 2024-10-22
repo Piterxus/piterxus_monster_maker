@@ -1,8 +1,8 @@
 ---
-const { Imgsrc, alt, tooltipText } = Astro.props;
+const { Imgsrc, alt, tooltipText, onClick, buttonType } = Astro.props;
 ---
 
-<button class="tooltip-container icon">
+<button class="tooltip-container icon" onclick={onClick} type={buttonType}>
   <span class="tooltip-text">{tooltipText}</span>
   <img src={Imgsrc} alt={alt} />
 </button>
