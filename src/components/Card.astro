@@ -3,9 +3,6 @@
 const { imgSrc, price } = Astro.props;
 import Icon from "../components/Icon.astro";
 import AddToCartForm from "./AddToCartForm";
-function test() {
-  alert("test");
-}
 ---
 
 <div class="card_test">
@@ -17,9 +14,8 @@ function test() {
         Imgsrc="/imgs/skeleton_shopping_cart.png"
         alt="Cart"
         tooltipText="Cart"
-        buttonType="button"
-        onClick={test}
-       
+        buttonType=""
+        
       />
     </AddToCartForm>
   </div>
@@ -60,3 +56,4 @@ function test() {
     margin: 0;
   }
 </style>
+
