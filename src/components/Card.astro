@@ -2,17 +2,16 @@
 // Recibe una imagen y el precio
 const { imgSrc, price } = Astro.props;
 import Icon from "../components/Icon.astro";
+import AddToCartForm from "./AddToCartForm";
 ---
 
 <div class="card_test">
   <img src={imgSrc} alt="" />
   <div class="add_cart">
     <p>{price} €</p>
-    <Icon
-      Imgsrc="/imgs/skeleton_shopping_add_cart.png"
-      alt="Add to cart"
-      tooltipText="Add to cart"
-    />
+<AddToCartForm  client:load>
+  <Icon Imgsrc="/imgs/skeleton_shopping_cart.png" alt="Cart" tooltipText="Cart" />
+</AddToCartForm>
   </div>
 </div>
 
