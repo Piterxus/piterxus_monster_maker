@@ -1,8 +1,17 @@
 ---
-const { Imgsrc, alt, tooltipText, buttonType } = Astro.props;
+
+// interface Props {
+//   id: string;
+//   Imgsrc: string;
+//   alt: string;
+//   tooltipText: string;
+//   buttonType: "submit" | "reset" | "button";
+// }
+
+const { Imgsrc, alt, tooltipText, buttonType, id } = Astro.props;
 ---
 
-<button class="tooltip-container icon" type={buttonType}>
+<button class="tooltip-container icon" type={buttonType} id= {id}>
   <span class="tooltip-text">{tooltipText}</span>
   <img src={Imgsrc} alt={alt} />
 </button>

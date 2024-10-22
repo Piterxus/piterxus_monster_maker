@@ -14,7 +14,8 @@ import AddToCartForm from "./AddToCartForm";
         Imgsrc="/imgs/skeleton_shopping_cart.png"
         alt="Cart"
         tooltipText="Cart"
-        buttonType=""
+        buttonType="button"
+        id="cart"
         
       />
     </AddToCartForm>
@@ -56,4 +57,12 @@ import AddToCartForm from "./AddToCartForm";
     margin: 0;
   }
 </style>
+<script>
+  const cart = document.getElementById("cart");
 
+if (cart) {
+  cart.addEventListener("click", () => {
+    alert("Added to cart!");
+  });
+}
+</script>

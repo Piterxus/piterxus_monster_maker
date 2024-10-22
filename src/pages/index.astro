@@ -20,12 +20,16 @@ import Icon from "../components/Icon.astro";
       Imgsrc="/imgs/skeleton_shopping_cart.png"
       alt="Cart"
       tooltipText="Cart"
+      id="cart"
+      buttonType="button"
     />
-    <Icon Imgsrc="/imgs/contact_icon.png" alt="Contact" tooltipText="Contact" />
+    <Icon Imgsrc="/imgs/contact_icon.png" alt="Contact" tooltipText="Contact" id="contact" buttonType="button"/>
     <Icon
       Imgsrc="/imgs/requests_icon.png"
       alt="Requests"
       tooltipText="Requests"
+      id="requests"
+      buttonType="button"
     />
   </div>
   <main>
@@ -135,3 +139,18 @@ import Icon from "../components/Icon.astro";
     }
   }
 </style>
+<script>
+  const requests = document.getElementById("requests");
+  const contact = document.getElementById("contact");
+
+  if (requests) {
+    requests.addEventListener("click", () => {
+      alert("Requests are closed at the moment. Please try again later.");
+    });
+  }
+  if (contact) {
+    contact.addEventListener("click", () => {
+      alert("Contact me at");
+    });
+  }
+</script>
