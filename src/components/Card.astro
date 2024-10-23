@@ -2,17 +2,29 @@
 // Recibe una imagen y el precio
 const { imgSrc, price } = Astro.props;
 import Icon from "../components/Icon.astro";
+import AddToCartForm from "./AddToCartForm";
+import type { CartItemDisplayInfo } from "../cartStore";
+const item: CartItemDisplayInfo = {
+  id: "figurine",
+  name: "Figurine",
+  imageSrc: "/images/astronaut-figurine.png",
+};
+
 ---
 
 <div class="card_test">
   <img src={imgSrc} alt="" />
   <div class="add_cart">
     <p>{price} €</p>
-    <Icon
-      Imgsrc="/imgs/skeleton_shopping_add_cart.png"
-      alt="Add to cart"
-      tooltipText="Add to cart"
-    />
+    <AddToCartForm item={item} client:load>
+      <Icon
+        Imgsrc="/imgs/skeleton_shopping_add_cart.png"
+        alt="Cart"
+        tooltipText="Cart"
+        buttonType=""
+        id="cart"
+      />
+    </AddToCartForm>
   </div>
 </div>
 
@@ -45,10 +57,21 @@ import Icon from "../components/Icon.astro";
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
   }
 
   p {
     margin: 0;
   }
 </style>
+<script>
+  
+  import { cartItems, isCartOpen } from "../cartStore";
+  const cart = document.getElementById("cart");
+
+  if (cart) {
+    cart.addEventListener("click", () => {
+      alert("Added to cart!");
+      console.log(cartItems);
+    });
+  }
+</script>

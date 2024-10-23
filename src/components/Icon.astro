@@ -1,11 +1,20 @@
 ---
-const { Imgsrc, alt, tooltipText } = Astro.props;
+
+// interface Props {
+//   id: string;
+//   Imgsrc: string;
+//   alt: string;
+//   tooltipText: string;
+//   buttonType: "submit" | "reset" | "button";
+// }
+
+const { Imgsrc, alt, tooltipText, buttonType, id } = Astro.props;
 ---
 
-<div class="tooltip-container">
+<button class="tooltip-container icon" type={buttonType} id= {id}>
   <span class="tooltip-text">{tooltipText}</span>
-  <img class="icon" src={Imgsrc} alt={alt} />
-</div>
+  <img src={Imgsrc} alt={alt} />
+</button>
 
 <style>
   .tooltip-container {
@@ -32,6 +41,7 @@ const { Imgsrc, alt, tooltipText } = Astro.props;
     text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.8);
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: black;
+    font-family: "Londrina Solid", sans-serif;
   }
 
   .tooltip-container:hover .tooltip-text {
@@ -53,5 +63,19 @@ const { Imgsrc, alt, tooltipText } = Astro.props;
   .icon:hover {
     scale: 1.1;
     filter: none;
+  }
+
+  button.icon {
+    padding: 0; /* Elimina el padding del botón */
+    background: none; /* Elimina el fondo por defecto del botón */
+    border: none; /* Elimina el borde por defecto del botón */
+  }
+
+  /* Asegúrate de que la imagen se ajuste al tamaño del botón */
+  button.icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Hereda los bordes del botón */
+    object-fit: inherit; /* Hereda las propiedades del botón */
   }
 </style>

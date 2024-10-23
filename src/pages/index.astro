@@ -2,12 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Icon from "../components/Icon.astro";
+import CartFlyout from "../components/CartFlyout";
 ---
 
 <Layout title="Piterxus Monster Maker">
   <header>
     <h1>PITERXUS MONSTER MAKER</h1>
     <h2>I turn your nightmares into art!</h2>
+    <!-- <CartFlyout client:load /> -->
   </header>
   <div class="header_3">
     <h3>
@@ -15,18 +17,30 @@ import Icon from "../components/Icon.astro";
       reason, I have always tried to bring those monsters that I love so much to
       reality. If you like my work it is at your disposal. Orders accepted.
     </h3>
-
-    <Icon
-      Imgsrc="/imgs/skeleton_shopping_cart.png"
-      alt="Cart"
-      tooltipText="Cart"
-    />
-    <Icon Imgsrc="/imgs/contact_icon.png" alt="Contact" tooltipText="Contact" />
-    <Icon
-      Imgsrc="/imgs/requests_icon.png"
-      alt="Requests"
-      tooltipText="Requests"
-    />
+    <div class="icons">
+      <CartFlyout client:load />
+      <Icon
+        Imgsrc="/imgs/skeleton_shopping_cart.png"
+        alt="Cart"
+        tooltipText="Cart"
+        id="cart"
+        buttonType="button"
+      />
+      <Icon
+        Imgsrc="/imgs/contact_icon.png"
+        alt="Contact"
+        tooltipText="Contact"
+        id="contact"
+        buttonType="button"
+      />
+      <Icon
+        Imgsrc="/imgs/requests_icon.png"
+        alt="Requests"
+        tooltipText="Requests"
+        id="requests"
+        buttonType="button"
+      />
+    </div>
   </div>
   <main>
     <Card imgSrc="/imgs/pazuzu.png" price="3000" />
@@ -94,7 +108,6 @@ import Icon from "../components/Icon.astro";
     justify-content: center;
   }
 
-
   /* Main content */
   main {
     padding: 2rem;
@@ -111,9 +124,11 @@ import Icon from "../components/Icon.astro";
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
-
   }
-
+  .icons{
+    /* border: 1px solid; */
+    margin-left: 15px;
+    display: flex;
   /* Responsiveness */
   h1 {
     font-size: 2.5rem;
@@ -135,3 +150,18 @@ import Icon from "../components/Icon.astro";
     }
   }
 </style>
+<script>
+  const requests = document.getElementById("requests");
+  const contact = document.getElementById("contact");
+
+  if (requests) {
+    requests.addEventListener("click", () => {
+      alert("Requests are closed at the moment. Please try again later.");
+    });
+  }
+  if (contact) {
+    contact.addEventListener("click", () => {
+      alert("Contact me at");
+    });
+  }
+</script>
