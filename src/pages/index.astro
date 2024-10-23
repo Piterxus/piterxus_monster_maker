@@ -2,12 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Icon from "../components/Icon.astro";
+import CartFlyout from "../components/CartFlyout";
 ---
 
 <Layout title="Piterxus Monster Maker">
   <header>
     <h1>PITERXUS MONSTER MAKER</h1>
     <h2>I turn your nightmares into art!</h2>
+    <CartFlyout client:load />
   </header>
   <div class="header_3">
     <h3>
@@ -23,7 +25,13 @@ import Icon from "../components/Icon.astro";
       id="cart"
       buttonType="button"
     />
-    <Icon Imgsrc="/imgs/contact_icon.png" alt="Contact" tooltipText="Contact" id="contact" buttonType="button"/>
+    <Icon
+      Imgsrc="/imgs/contact_icon.png"
+      alt="Contact"
+      tooltipText="Contact"
+      id="contact"
+      buttonType="button"
+    />
     <Icon
       Imgsrc="/imgs/requests_icon.png"
       alt="Requests"
@@ -98,7 +106,6 @@ import Icon from "../components/Icon.astro";
     justify-content: center;
   }
 
-
   /* Main content */
   main {
     padding: 2rem;
@@ -115,7 +122,6 @@ import Icon from "../components/Icon.astro";
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
-
   }
 
   /* Responsiveness */
