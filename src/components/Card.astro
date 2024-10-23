@@ -3,20 +3,26 @@
 const { imgSrc, price } = Astro.props;
 import Icon from "../components/Icon.astro";
 import AddToCartForm from "./AddToCartForm";
+import type { CartItemDisplayInfo } from "../cartStore";
+const item: CartItemDisplayInfo = {
+  id: "astronaut-figurine",
+  name: "Astronaut Figurine",
+  imageSrc: "/images/astronaut-figurine.png",
+};
+
 ---
 
 <div class="card_test">
   <img src={imgSrc} alt="" />
   <div class="add_cart">
     <p>{price} €</p>
-    <AddToCartForm client:load>
+    <AddToCartForm item={item} client:load>
       <Icon
-        Imgsrc="/imgs/skeleton_shopping_cart.png"
+        Imgsrc="/imgs/skeleton_shopping_add_cart.png"
         alt="Cart"
         tooltipText="Cart"
-        buttonType="button"
+        buttonType=""
         id="cart"
-        
       />
     </AddToCartForm>
   </div>
@@ -58,11 +64,14 @@ import AddToCartForm from "./AddToCartForm";
   }
 </style>
 <script>
+  
+  import { cartItems, isCartOpen } from "../cartStore";
   const cart = document.getElementById("cart");
 
-if (cart) {
-  cart.addEventListener("click", () => {
-    alert("Added to cart!");
-  });
-}
+  if (cart) {
+    cart.addEventListener("click", () => {
+      alert("Added to cart!");
+      console.log(cartItems);
+    });
+  }
 </script>

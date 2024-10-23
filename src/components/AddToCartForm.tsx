@@ -8,7 +8,7 @@ import type { ReactNode } from 'react';  // Importa ReactNode en lugar de Childr
 // };
 // Prescindo por el momento de item
 type Props = {
- 
+    item: CartItemDisplayInfo;
     children: ReactNode;  // Usa ReactNode para definir los hijos
 };
 // export default function AddToCartForm({ item, children }: Props) {
@@ -26,7 +26,7 @@ type Props = {
 //     return <form onSubmit={addToCart}>{children}</form>;
 // }
 
-export default function AddToCartForm({ children }: Props) {
+export default function AddToCartForm({ item, children }: Props) {
     // function addToCart(e: React.FormEvent<HTMLFormElement>) {  // Ajusta el tipo del evento
     //     e.preventDefault();
     //     isCartOpen.set(true);
@@ -34,8 +34,9 @@ export default function AddToCartForm({ children }: Props) {
     // }
     function addToCart(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        alert('Añadir al carrito');
-        console.log('Añadir al carrito');
+        addCartItem(item);
+       
+        console.log('Cantidad de productos en el carrito: ', item);
     }
 
     return <form onSubmit={addToCart}>{children}</form>;
