@@ -11,7 +11,7 @@ export default function CartFlyout() {
             {Object.values($cartItems).length ? (
                 <>
                     {Object.values($cartItems).map((cartItem) => (
-                          <p>Quantity: {cartItem.quantity}</p>
+                        <p>Products in the cart: {cartItem.quantity}</p>
                     
                     ))}
                 </>
