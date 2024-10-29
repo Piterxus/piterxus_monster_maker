@@ -3,6 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Icon from "../components/Icon.astro";
 import CartFlyout from "../components/CartFlyout";
+import { getCardInfo } from "../lib/get-card-info";
+const cardInfo = await getCardInfo();
+const STRAPI_HOST = import.meta.env.PUBLIC_STRAPI_HOST;
+const {documentId, price, img_product} = cardInfo[0];
+const imageSrc = STRAPI_HOST + img_product[0].url;
+const cardInfoMap = await getCardInfo();
 // import { getCardInfo } from "../lib/get-card-info";
 // const cardInfo = await getCardInfo();
 ---
@@ -57,6 +63,14 @@ import CartFlyout from "../components/CartFlyout";
     <Card imgSrc="/imgs/braindead.png" price="3000" />
     <Card imgSrc="/imgs/cromos.png" price="3000" />
     <Card imgSrc="/imgs/cramps.png" price="3000" />
+  
+
+    {
+      cardInfoMap.map((card:any) => (
+        <Card imgSrc={STRAPI_HOST + card.img_product[0].url} price={card.price} />
+      ))
+    }
+  
   </main>
 </Layout>
 
@@ -157,8 +171,10 @@ import CartFlyout from "../components/CartFlyout";
   const contact = document.getElementById("contact");
   import { getCardInfo } from "../lib/get-card-info";
   const cardInfo = await getCardInfo();
-  const {documentId, price} = cardInfo[0];
+  const {documentId, price, img_product} = cardInfo[0];
   console.log("Price", price)
+  console.log("DocumentId", documentId)
+  console.log("Img_product", img_product[0].url)
   if (requests) {
     requests.addEventListener("click", () => {
       alert("Requests are closed at the moment. Please try again later.");
