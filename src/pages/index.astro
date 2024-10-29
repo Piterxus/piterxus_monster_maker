@@ -157,6 +157,8 @@ import CartFlyout from "../components/CartFlyout";
   const contact = document.getElementById("contact");
   import { getCardInfo } from "../lib/get-card-info";
   const cardInfo = await getCardInfo();
+  const {documentId, price} = cardInfo[0];
+  console.log("Price", price)
   if (requests) {
     requests.addEventListener("click", () => {
       alert("Requests are closed at the moment. Please try again later.");

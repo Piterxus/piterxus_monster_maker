@@ -13,6 +13,6 @@ export function getCardInfo() {
     return query(`cards`)
         .then((res) => {
             console.log(res.data);
-            // return res;
+            return res.data;
         });
 }
