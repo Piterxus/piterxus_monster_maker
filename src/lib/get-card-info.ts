@@ -12,7 +12,7 @@ import { query } from './strapi';
 export function getCardInfo() {
     return query(`cards`)
         .then((res) => {
-            console.log(res);
+            console.log(res.data);
             // return res;
         });
 }
