@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # Visual Studio Code files
 .vscode/
+
+# Ignore all API test files created with the Rest Client extension
+*.rest
