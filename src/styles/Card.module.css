@@ -1,0 +1,37 @@
+img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    border: 1px solid #303224;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    filter: sepia(100%);
+    /* Aplica el filtro sepia al 100% */
+    object-fit: cover;
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
+}
+
+img:hover {
+    filter: none;
+    /* Elimina el filtro al hacer hover */
+}
+
+.card_test {
+    background-color: #303224;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 300px;
+    height: 350px;
+}
+
+.add_cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
