@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Icon from "../components/Icon.tsx";
 import AddToCartForm from "./AddToCartForm";
 import styles from "../styles/Card.module.css";
+import { query } from '../lib/strapi.ts';
+const STRAPI_HOST = import.meta.env.PUBLIC_STRAPI_HOST;
 
 type CardProps = {
     documentId: string;
@@ -16,11 +18,13 @@ const Card: React.FC<CardProps> = ({ documentId, price, imageSrc }) => {
     useEffect(() => {
         async function fetchImage() {
             try {
-                const response = await fetch(`https://www.monstermakerback.piterxus.com/api/cards/${documentId}?populate=cover`);
-                const data = await response.json();
-                setImgSrc(imageSrc);
+                const data = await query(`cards/${documentId}?populate=img_product`);
+                // Asegúrate de usar la URL de la imagen obtenida de la API
+                // console.log("DATA", `${STRAPI_HOST}${data.data.img_product[0].url}`);
+                const newImgSrc = `${STRAPI_HOST}${data.data.img_product[0].url}`;
+                setImgSrc(newImgSrc);
             } catch (error) {
-                console.error("Error fetching image:", error);
+                console.error("Error fetching image:", error);  
             }
         }
         fetchImage();
