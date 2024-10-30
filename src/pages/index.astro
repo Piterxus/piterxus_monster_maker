@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-// import Card from "../components/Card.astro";
-import Card from "../components/Card.tsx";
+import Card from "../components/Card.astro";
+// import Card from "../components/Card.tsx";
 import Icon from "../components/Icon.astro";
 import CartFlyout from "../components/CartFlyout";
 import { getCardInfo } from "../lib/get-card-info";
@@ -66,19 +66,19 @@ const cardInfoMap = await getCardInfo();
     <Card imgSrc="/imgs/cramps.png" price="3000" /> -->
   
 
-    <!-- {
+    {
       cardInfoMap.map((card:any) => (
         <Card imgSrc={STRAPI_HOST + card.img_product[0].url} price={card.price} />
       ))
-    } -->
-      {cardInfoMap.map((card: any) => (
+    }
+      <!-- {cardInfoMap.map((card: any) => (
       <Card
         documentId={card.documentId}
         price={card.price}
         imageSrc={STRAPI_HOST + card.img_product[0].url}
         client:load
       />
-    ))}
+    ))} -->
   </main>
 </Layout>
 
