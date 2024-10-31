@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card"; 
 import { getCardInfo } from "../lib/get-card-info";
+import styles from "../styles/Card.module.css";
 
 const STRAPI_HOST = import.meta.env.PUBLIC_STRAPI_HOST;
 
@@ -17,7 +18,7 @@ const CardContainer: React.FC = () => {
     }, []);
 
     return (
-        <div className="card-container">
+        <>
             {cardInfoMap.map((card) => (
                 <Card
                     key={card.documentId}
@@ -26,7 +27,7 @@ const CardContainer: React.FC = () => {
                     imageSrc={STRAPI_HOST + card.img_product[0].url}
                 />
             ))}
-        </div>
+        </>
     );
 };
 
