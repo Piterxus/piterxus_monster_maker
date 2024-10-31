@@ -21,6 +21,7 @@ const Card: React.FC<CardProps> = ({ documentId, price, imageSrc }) => {
                 const data = await query(`cards/${documentId}?populate=img_product`);
                 // Asegúrate de usar la URL de la imagen obtenida de la API
                 // console.log("DATA", `${STRAPI_HOST}${data.data.img_product[0].url}`);
+                console.log("DATA", data);
                 const newImgSrc = `${STRAPI_HOST}${data.data.img_product[0].url}`;
                 setImgSrc(newImgSrc);
             } catch (error) {
