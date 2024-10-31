@@ -176,12 +176,13 @@ const cardInfoMap = await getCardInfo();
   }
 </style>
 <script>
-  alert("Welcome to Piterxus Monster Maker!");
+
   const requests = document.getElementById("requests");
   const contact = document.getElementById("contact");
   import { getCardInfo } from "../lib/get-card-info";
   const cardInfo = await getCardInfo();
   const {documentId, price, img_product} = cardInfo[0];
+  console.log("CardInfo", cardInfo)
   console.log("Price", price)
   console.log("DocumentId", documentId)
   console.log("Img_product", img_product[0].url)
