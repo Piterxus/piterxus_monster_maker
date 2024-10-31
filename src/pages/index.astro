@@ -5,6 +5,7 @@ import Card from "../components/Card.tsx";
 import Icon from "../components/Icon.astro";
 import CartFlyout from "../components/CartFlyout";
 import { getCardInfo } from "../lib/get-card-info";
+import CardContainer from "../components/CardContainer";
 const cardInfo = await getCardInfo();
 const STRAPI_HOST = import.meta.env.PUBLIC_STRAPI_HOST;
 const {documentId, price, img_product} = cardInfo[0];
@@ -71,14 +72,15 @@ const cardInfoMap = await getCardInfo();
         <Card imgSrc={STRAPI_HOST + card.img_product[0].url} price={card.price} />
       ))
     } -->
-      {cardInfoMap.map((card: any) => (
+      <!-- {cardInfoMap.map((card: any) => (
       <Card
         documentId={card.documentId}
         price={card.price}
         imageSrc={STRAPI_HOST + card.img_product[0].url}
         client:load
       />
-    ))}
+    ))} -->
+     <CardContainer client:load />
   </main>
 </Layout>
 
