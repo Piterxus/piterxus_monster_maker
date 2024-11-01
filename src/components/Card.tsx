@@ -22,8 +22,12 @@ type CardProps = {
     const Card: React.FC<CardProps> = ({ documentId, price, imageSrc, name }) => {
     const [imgSrc, setImgSrc] = useState<string | null>(null);
         const $cartItems = useStore(cartItems);
-        // console.log(documentId);
-        // console.log("Cart item", Object.values($cartItems));
+   
+        console.log("Cart item", Object.values($cartItems));
+        const itemIdToCheck = documentId; // o cualquier id que desees verificar
+        const itemExists = Object.values($cartItems).some(item => item.id === itemIdToCheck);
+
+        console.log("Item exists in cart:", itemExists);
     useEffect(() => {
         async function fetchImage() {
             try {
@@ -50,6 +54,7 @@ type CardProps = {
             )}
             <div className={styles.add_cart}>
                 <p>{price} €</p>
+                {(itemExists) ? <p>Item in cart</p> :  ""}
                 <AddToCartForm item={{ id: documentId, name, imageSrc: imgSrc || '' }}>
                     <Icon
                         Imgsrc="/imgs/skeleton_shopping_add_cart.png"
