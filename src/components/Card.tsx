@@ -51,7 +51,7 @@ type CardProps = {
                         Imgsrc="/imgs/skeleton_shopping_add_cart.png"
                         alt="Cart"
                         tooltipText="Add to cart"
-                        buttonType="button"
+                        buttonType="submit"
                         id="cart"
                     />
                 </AddToCartForm>

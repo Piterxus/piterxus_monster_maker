@@ -9,13 +9,14 @@ export default function CartFlyout() {
     return (
         <>
             {Object.values($cartItems).length ? (
-                <>
-                    {Object.values($cartItems).map((cartItem) => (
+                <p >Products in the cart:{ Object.values($cartItems).length} </p>
+                // <>
+                //     {Object.values($cartItems).map((cartItem) => (
 
-                        <p key={cartItem.id}>Products in the cart: {cartItem.quantity}</p>
+                //         <p key={cartItem.id}>Products in the cart: {cartItem.quantity}</p>
 
-                    ))}
-                </>
+                //     ))}
+                // </>
             ) : (
                 // <p>Your cart is empty!</p>
 
