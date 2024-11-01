@@ -15,17 +15,25 @@ export const cartItems = map<Record<string, CartItem>>({});
 
 export function addCartItem({ id, name, imageSrc }: CartItemDisplayInfo) {
     const existingEntry = cartItems.get()[id];
-    if (existingEntry) {
+    // if (existingEntry) {
+    //     cartItems.setKey(id, {
+    //         ...existingEntry,
+    //         quantity: existingEntry.quantity + 1,
+    //     });
+    // } else {
+    //     cartItems.setKey(id, {
+    //         id,
+    //         name,
+    //         imageSrc,
+    //         quantity: 1,
+    //     });
+    // }
+    if (!existingEntry) {
         cartItems.setKey(id, {
-            ...existingEntry,
-            quantity: existingEntry.quantity + 1,
+                    id,
+                    name,
+                    imageSrc,
+                    quantity: 1,
         });
-    } else {
-        cartItems.setKey(id, {
-            id,
-            name,
-            imageSrc,
-            quantity: 1,
-        });
-    }
+    } 
 }
