@@ -55,7 +55,7 @@ type CardProps = {
             <div className={styles.add_cart}>
                 <p>{price} €</p>
                 {(itemExists) ? <p>Item in cart</p> :  ""}
-                <AddToCartForm item={{ id: documentId, name, imageSrc: imgSrc || '' }}>
+                <AddToCartForm item={{ id: documentId, price, name, imageSrc: imgSrc || '' }}>
                     <Icon
                         Imgsrc="/imgs/skeleton_shopping_add_cart.png"
                         alt="Cart"

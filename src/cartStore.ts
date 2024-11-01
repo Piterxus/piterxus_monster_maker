@@ -6,14 +6,15 @@ export type CartItem = {
     id: string;
     name: string;
     imageSrc: string;
+    price: number;
     quantity: number;
 };
 
-export type CartItemDisplayInfo = Pick<CartItem, 'id' | 'name' | 'imageSrc'>;
+export type CartItemDisplayInfo = Pick<CartItem, 'id' | 'name' | 'imageSrc' | 'price'>;
 
 export const cartItems = map<Record<string, CartItem>>({});
 
-export function addCartItem({ id, name, imageSrc }: CartItemDisplayInfo) {
+export function addCartItem({ id, name, imageSrc, price }: CartItemDisplayInfo) {
     const existingEntry = cartItems.get()[id];
     // if (existingEntry) {
     //     cartItems.setKey(id, {
@@ -33,6 +34,7 @@ export function addCartItem({ id, name, imageSrc }: CartItemDisplayInfo) {
                     id,
                     name,
                     imageSrc,
+                    price,
                     quantity: 1,
         });
     } 
