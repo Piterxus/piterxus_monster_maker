@@ -36,7 +36,7 @@ export default function AddToCartForm({ item, children }: Props) {
         e.preventDefault();
         addCartItem(item);
        
-        console.log('Cantidad de productos en el carrito: ', item);
+        // console.log('Cantidad de productos en el carrito: ', item);
     }
 
     return <form onSubmit={addToCart}>{children}</form>;
