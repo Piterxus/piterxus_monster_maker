@@ -26,7 +26,7 @@ const CardContainer: React.FC = () => {
                     documentId={card.documentId}
                     price={card.price}
                     imageSrc={STRAPI_HOST + card.img_product[0].url}
-                    name = {card.Name}
+                    name = {card.name}
                 />
             ))}
         </>
