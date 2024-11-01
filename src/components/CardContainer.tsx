@@ -12,6 +12,7 @@ const CardContainer: React.FC = () => {
     useEffect(() => {
         async function fetchData() {
             const data = await getCardInfo();
+            console.log(data);
             setCardInfoMap(data);
         }
         fetchData();
@@ -25,6 +26,7 @@ const CardContainer: React.FC = () => {
                     documentId={card.documentId}
                     price={card.price}
                     imageSrc={STRAPI_HOST + card.img_product[0].url}
+                    name = {card.Name}
                 />
             ))}
         </>

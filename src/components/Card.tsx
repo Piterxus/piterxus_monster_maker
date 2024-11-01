@@ -9,24 +9,28 @@ import styles from "../styles/Card.module.css";
 // const cardInfo = await getCardInfo();
 // const { img_product } = cardInfo[0];
 // const imageSrc = STRAPI_HOST + img_product[0].url;
-
+import { useStore } from '@nanostores/react';
+import { cartItems, isCartOpen } from '../cartStore';
 
 type CardProps = {
     documentId: string;
     price: number;
     imageSrc: string;
+    name: string;
 };
 
-    const Card: React.FC<CardProps> = ({ documentId, price, imageSrc }) => {
+    const Card: React.FC<CardProps> = ({ documentId, price, imageSrc, name }) => {
     const [imgSrc, setImgSrc] = useState<string | null>(null);
-
+        const $cartItems = useStore(cartItems);
+        // console.log(documentId);
+        // console.log("Cart item", Object.values($cartItems));
     useEffect(() => {
         async function fetchImage() {
             try {
                 // const data = await query(`cards/${documentId}?populate=img_product`);
                 // Asegúrate de usar la URL de la imagen obtenida de la API
                 // console.log("DATA", `${STRAPI_HOST}${data.data.img_product[0].url}`);
-                console.log("DATA", imageSrc);
+                // console.log("DATA", imageSrc);
                 // const newImgSrc = `${STRAPI_HOST}${data.data.img_product[0].url}`;
 
                 setImgSrc(imageSrc);
@@ -46,7 +50,7 @@ type CardProps = {
             )}
             <div className={styles.add_cart}>
                 <p>{price} €</p>
-                <AddToCartForm item={{ id: documentId, name: "Figurine", imageSrc: imgSrc || '' }}>
+                <AddToCartForm item={{ id: documentId, name, imageSrc: imgSrc || '' }}>
                     <Icon
                         Imgsrc="/imgs/skeleton_shopping_add_cart.png"
                         alt="Cart"
