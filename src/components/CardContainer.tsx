@@ -6,7 +6,7 @@ import styles from "../styles/Card.module.css";
 
 const STRAPI_HOST = import.meta.env.PUBLIC_STRAPI_HOST;
 
-const CardContainer: React.FC = () => {
+const CardContainer = () => {
     const [cardInfoMap, setCardInfoMap] = useState<any[]>([]);
 
     useEffect(() => {
