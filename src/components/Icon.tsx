@@ -10,7 +10,7 @@ type IconProps = {
     buttonType?: "button" | "submit" | "reset" | undefined;
 };
 
-const Icon: React.FC<IconProps> = ({ Imgsrc, alt, tooltipText, id, buttonType }) => (
+const Icon= ({ Imgsrc, alt, tooltipText, id, buttonType }: IconProps) => (
     <button id={id} type={buttonType} aria-label={tooltipText} className={`${styles.tooltip_container} ${styles.icon}`}>
         <img src={Imgsrc} alt={alt} />
         {tooltipText && <span className={styles.tooltip_text}>{tooltipText}</span>}

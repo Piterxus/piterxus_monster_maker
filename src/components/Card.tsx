@@ -19,7 +19,7 @@ type CardProps = {
     name: string;
 };
 
-    const Card: React.FC<CardProps> = ({ documentId, price, imageSrc, name }) => {
+const Card = ({ documentId, price, imageSrc, name }: CardProps) => {
     const [imgSrc, setImgSrc] = useState<string | null>(null);
         const $cartItems = useStore(cartItems);
    
