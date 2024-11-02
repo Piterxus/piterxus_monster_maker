@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
 import { cartItems, isCartOpen } from '../cartStore';
-import styles from './CartFlyout.module.css';
+import styles from '../styles/CartFlyout.module.css';
 
 export default function CartFlyout() {
     const $isCartOpen = useStore(isCartOpen);
