@@ -1,14 +1,7 @@
 import { query } from './strapi';
 const STRAPI_HOST = import.meta.env.PUBLIC_STRAPI_HOST;
 
-// export async function getCardInfo (id: string) {
-//     return query(`cards/${id}`);
-// }
 
-// export function getCardInfo() {
-//     return query(`cards`)
-//     .then((res) => res.json());
-// }
 
 export function getCardInfo() {
     return query(`cards?populate=img_product`)

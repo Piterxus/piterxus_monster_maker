@@ -1,16 +1,9 @@
-// Card.tsx
-import React, { useEffect, useState } from 'react';
-// const STRAPI_HOST = import.meta.env.PUBLIC_STRAPI_HOST;
+import { useEffect, useState } from 'react';
 import Icon from "../components/Icon.tsx";
 import AddToCartForm from "./AddToCartForm";
 import styles from "../styles/Card.module.css";
-// import { query } from '../lib/strapi.ts';
-// import { getCardInfo } from '../lib/get-card-info.ts';
-// const cardInfo = await getCardInfo();
-// const { img_product } = cardInfo[0];
-// const imageSrc = STRAPI_HOST + img_product[0].url;
 import { useStore } from '@nanostores/react';
-import { cartItems, isCartOpen } from '../cartStore';
+import { cartItems } from '../cartStore';
 
 type CardProps = {
     documentId: string;
@@ -31,11 +24,7 @@ const Card = ({ documentId, price, imageSrc, name }: CardProps) => {
     useEffect(() => {
         async function fetchImage() {
             try {
-                // const data = await query(`cards/${documentId}?populate=img_product`);
-                // Asegúrate de usar la URL de la imagen obtenida de la API
-                // console.log("DATA", `${STRAPI_HOST}${data.data.img_product[0].url}`);
-                // console.log("DATA", imageSrc);
-                // const newImgSrc = `${STRAPI_HOST}${data.data.img_product[0].url}`;
+             
 
                 setImgSrc(imageSrc);
             } catch (error) {

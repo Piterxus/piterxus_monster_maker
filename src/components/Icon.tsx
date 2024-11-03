@@ -1,5 +1,3 @@
-// Icon.tsx
-import React from 'react';
 import styles from "../styles/Icon.module.css";
 
 type IconProps = {

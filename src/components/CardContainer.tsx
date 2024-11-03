@@ -1,8 +1,7 @@
-// CardContainer.tsx
 import React, { useState, useEffect } from "react";
-import Card from "../components/Card"; 
+import Card from "../components/Card";
 import { getCardInfo } from "../lib/get-card-info";
-import styles from "../styles/Card.module.css";
+
 
 const STRAPI_HOST = import.meta.env.PUBLIC_STRAPI_HOST;
 
@@ -26,7 +25,7 @@ const CardContainer = () => {
                     documentId={card.documentId}
                     price={card.price}
                     imageSrc={STRAPI_HOST + card.img_product[0].url}
-                    name = {card.name}
+                    name={card.name}
                 />
             ))}
         </>

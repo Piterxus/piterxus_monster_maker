@@ -1,26 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-// import Card from "../components/Card.astro";
-import Card from "../components/Card.tsx";
 import Icon from "../components/Icon.astro";
 import CartFlyout from "../components/CartFlyout";
-import { getCardInfo } from "../lib/get-card-info";
 import CardContainer from "../components/CardContainer";
 import ReactRoutes from "../components/ReactRoutes";
-const cardInfo = await getCardInfo();
-const STRAPI_HOST = import.meta.env.PUBLIC_STRAPI_HOST;
-const {documentId, price, img_product} = cardInfo[0];
-const imageSrc = STRAPI_HOST + img_product[0].url;
-const cardInfoMap = await getCardInfo();
-// import { getCardInfo } from "../lib/get-card-info";
-// const cardInfo = await getCardInfo();
 ---
 
 <Layout title="Piterxus Monster Maker">
   <header>
     <h1>PITERXUS MONSTER MAKER</h1>
     <h2>I turn your nightmares into art!</h2>
-    <!-- <CartFlyout client:load /> -->
+ 
   </header>
   <div class="header_3">
     <h3>
@@ -54,34 +44,8 @@ const cardInfoMap = await getCardInfo();
     </div>
   </div>
   <main>
-    <!-- <Card imgSrc="/imgs/pazuzu.png" price="3000" />
-    <Card imgSrc="/imgs//critter.png" price="3000" />
-    <Card imgSrc="/imgs/man_bat.png" price="3000" />
-    <Card imgSrc="/imgs/lagoon.png" price="3000" />
-    <Card imgSrc="/imgs/mark.png" price="3000" />
-    <Card imgSrc="/imgs/plan.png" price="3000" />
-    <Card imgSrc="/imgs/misfits.png" price="3000" />
-    <Card imgSrc="/imgs/divine.png" price="3000" />
-    <Card imgSrc="/imgs/batman.png" price="3000" />
-    <Card imgSrc="/imgs/braindead.png" price="3000" />
-    <Card imgSrc="/imgs/cromos.png" price="3000" />
-    <Card imgSrc="/imgs/cramps.png" price="3000" /> -->
-  
 
-    <!-- {
-      cardInfoMap.map((card:any) => (
-        <Card imgSrc={STRAPI_HOST + card.img_product[0].url} price={card.price} />
-      ))
-    } -->
-      <!-- {cardInfoMap.map((card: any) => (
-      <Card
-        documentId={card.documentId}
-        price={card.price}
-        imageSrc={STRAPI_HOST + card.img_product[0].url}
-        client:load
-      />
-    ))} -->
-     <CardContainer client:load />
+    <CardContainer client:load />
     <ReactRoutes client:only />
   </main>
 </Layout>
