@@ -6,6 +6,7 @@ import Icon from "../components/Icon.astro";
 import CartFlyout from "../components/CartFlyout";
 import { getCardInfo } from "../lib/get-card-info";
 import CardContainer from "../components/CardContainer";
+import ReactRoutes from "../components/ReactRoutes";
 const cardInfo = await getCardInfo();
 const STRAPI_HOST = import.meta.env.PUBLIC_STRAPI_HOST;
 const {documentId, price, img_product} = cardInfo[0];
@@ -81,6 +82,7 @@ const cardInfoMap = await getCardInfo();
       />
     ))} -->
      <CardContainer client:load />
+    <ReactRoutes client:only />
   </main>
 </Layout>
 
