@@ -1,4 +1,3 @@
-// const {STRAPI_HOST, STRAPI_TOKEN} = process.env;
 const STRAPI_HOST = import.meta.env.PUBLIC_STRAPI_HOST;
 const STRAPI_TOKEN = import.meta.env.PUBLIC_STRAPI_TOKEN;
 
