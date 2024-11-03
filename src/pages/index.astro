@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Icon from "../components/Icon.astro";
+import Icon from "../components/Icon.tsx";
 import CartFlyout from "../components/CartFlyout";
 import CardContainer from "../components/CardContainer";
 import ReactRoutes from "../components/ReactRoutes";
@@ -10,7 +10,6 @@ import ReactRoutes from "../components/ReactRoutes";
   <header>
     <h1>PITERXUS MONSTER MAKER</h1>
     <h2>I turn your nightmares into art!</h2>
-    <a href="/cart">cart</a>
   </header>
   <div class="header_2">
     <h3>
@@ -26,6 +25,8 @@ import ReactRoutes from "../components/ReactRoutes";
         tooltipText="Cart"
         id="cart"
         buttonType="button"
+        route = "/cart"
+        client:load
       />
       <Icon
         Imgsrc="/imgs/contact_icon.png"
