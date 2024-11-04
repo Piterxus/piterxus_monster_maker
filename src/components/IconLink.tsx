@@ -16,9 +16,7 @@ const IconLink = ({ to, linkText }: IconLinkProps) =>{
         //     <Link to={to} style={{ textDecoration: 'none' }}>
         //         {linkText}
         //     </Link>
-        //     <div>
-        //         <Outlet />
-        //     </div>
+        //     <Outlet />
         
         
         // </>
