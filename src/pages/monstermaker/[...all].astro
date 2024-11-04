@@ -1,0 +1,161 @@
+<!-- ---
+import Layout from "../../layouts/Layout.astro";
+import Icon from "../../components/Icon.tsx";
+import CartFlyout from "../../components/CartFlyout";
+import CardContainer from "../../components/CardContainer";
+import { App } from "../../components/App.tsx";
+---
+
+<Layout title="Piterxus Monster Maker">
+  <header>
+    <h1>PITERXUS MONSTER MAKER</h1>
+    <h2>I turn your nightmares into art!</h2>
+    <App client:only />
+  </header>
+  <div class="header_2">
+    <h3>
+      I have been a horror movie fan for as long as I can remember. For that
+      reason, I have always tried to bring those monsters that I love so much to
+      reality. If you like my work it is at your disposal. Orders accepted.
+    </h3>
+    <div class="icons">
+      <CartFlyout client:load />
+      <Icon
+        Imgsrc="/imgs/skeleton_shopping_cart.png"
+        alt="Cart"
+        tooltipText="Cart"
+        id="cart"
+        buttonType="button"
+        route="/cart"
+        client:load
+      />
+      <Icon
+        Imgsrc="/imgs/contact_icon.png"
+        alt="Contact"
+        tooltipText="Contact"
+        id="contact"
+        buttonType="button"
+      />
+      <Icon
+        Imgsrc="/imgs/requests_icon.png"
+        alt="Requests"
+        tooltipText="Requests"
+        id="requests"
+        buttonType="button"
+      />
+    </div>
+  </div>
+  <main>
+    <CardContainer client:load />
+  </main>
+</Layout>
+
+<style>
+  /* Estilo global */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    background: #d7c98c;
+    overflow-x: hidden;
+  }
+
+  header {
+    text-align: center;
+    background-color: #2e2e2e;
+    color: #a8a270;
+    padding: 1rem;
+    /* position: sticky; */
+    top: 0;
+    z-index: 10;
+    width: 100%;
+
+    background-image: url(/imgs/comic_texture.png);
+    background-repeat: repeat;
+    background-size: contain;
+    background-blend-mode: multiply; /* Combina el color de fondo con la textura */
+  }
+
+  .header_2 {
+    background-color: #afa874;
+    color: #303224;
+    padding: 1rem;
+    text-align: center;
+    top: 5rem;
+    z-index: 9;
+    width: 100%;
+    background-image: url(/imgs/comic_texture.png);
+    background-repeat: repeat;
+    background-size: contain;
+    background-blend-mode: multiply; /* Combina el color de fondo con la textura */
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Main content */
+  main {
+    padding: 2rem;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    height: 100%;
+    background: #d7c98c;
+    margin: auto;
+    background-image: url(/imgs/comic_texture.png);
+    background-repeat: no repeat;
+    background-size: cover;
+    background-blend-mode: multiply; /* Combina el color de fondo con la textura */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+  }
+  .icons {
+    margin-left: 15px;
+    display: flex;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2,
+    h3 {
+      font-size: 1rem;
+    }
+  }
+</style>
+<script>
+  import { getCardInfo } from "../lib/get-card-info";
+  const requests = document.getElementById("requests");
+  const contact = document.getElementById("contact");
+  const cardInfo = await getCardInfo();
+  const { documentId, price, img_product } = cardInfo[0];
+  console.log("CardInfo", cardInfo);
+  console.log("Price", price);
+  console.log("DocumentId", documentId);
+  console.log("Img_product", img_product[0].url);
+  if (requests) {
+    requests.addEventListener("click", () => {
+      alert("Requests are closed at the moment. Please try again later.");
+    });
+  }
+  if (contact) {
+    contact.addEventListener("click", () => {
+      alert("Contact me at");
+    });
+  }
+</script> -->

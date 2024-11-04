@@ -3,13 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.tsx";
 import CartFlyout from "../components/CartFlyout";
 import CardContainer from "../components/CardContainer";
-import {App } from "../components/App.tsx";
+import { App } from "../components/App.tsx";
 ---
 
 <Layout title="Piterxus Monster Maker">
   <header>
     <h1>PITERXUS MONSTER MAKER</h1>
     <h2>I turn your nightmares into art!</h2>
+    <!-- <App client:only /> -->
   </header>
   <div class="header_2">
     <h3>
@@ -25,7 +26,7 @@ import {App } from "../components/App.tsx";
         tooltipText="Cart"
         id="cart"
         buttonType="button"
-        route = "/cart"
+        route="/cart"
         client:load
       />
       <Icon
@@ -46,7 +47,6 @@ import {App } from "../components/App.tsx";
   </div>
   <main>
     <CardContainer client:load />
-    <App client:only />
   </main>
 </Layout>
 
