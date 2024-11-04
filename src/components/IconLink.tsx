@@ -12,19 +12,19 @@ interface IconLinkProps {
 const IconLink = ({ to, linkText }: IconLinkProps) =>{
     return (
         
-        <>
-            <Link to={to} style={{ textDecoration: 'none' }}>
+        // <>
+        //     <Link to={to} style={{ textDecoration: 'none' }}>
+        //         {linkText}
+        //     </Link>
+        //     <div>
+        //         <Outlet />
+        //     </div>
+        
+        
+        // </>
+            <a href={to} style={{ textDecoration: 'none' }}>
                 {linkText}
-            </Link>
-            <div>
-                <Outlet />
-            </div>
-        
-        
-        </>
-            // <a href={to} style={{ textDecoration: 'none' }}>
-            //     {linkText}
-            // </a>
+            </a>
         
     )
 };
