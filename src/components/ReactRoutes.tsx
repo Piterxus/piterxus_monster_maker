@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, createBrowserRouter, RouterProvider, BrowserRouter } from 'react-router-dom';
 import React from 'react';
 import Cart from './Cart';
 
@@ -21,9 +21,12 @@ const router = createBrowserRouter([
 
 const ReactRoutes = () => {
     return (
-        <React.StrictMode>
-            <RouterProvider router={router} />
-        </React.StrictMode>
+        // <React.StrictMode>
+        //     <RouterProvider router={router} />
+        // </React.StrictMode>
+        <BrowserRouter>
+        <Cart />
+        </BrowserRouter>
     );
 };
 
