@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.tsx";
 import CartFlyout from "../components/CartFlyout";
 import CardContainer from "../components/CardContainer";
-import ReactRoutes from "../components/ReactRoutes";
+import App  from "../components/App.tsx";
 ---
 
 <Layout title="Piterxus Monster Maker">
@@ -46,7 +46,7 @@ import ReactRoutes from "../components/ReactRoutes";
   </div>
   <main>
     <CardContainer client:load />
-    <ReactRoutes client:only />
+    <App client:only />
   </main>
 </Layout>
 
