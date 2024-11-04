@@ -5,11 +5,11 @@ import Cart from './Cart.tsx';
 
 const router = createBrowserRouter([
     {
-        path: 'monstermaker',
+        path: '/',
         element: <Layout />,
         children: [
            
-            { path: 'cart', element: < Cart/> },
+            { path: '/cart', element: < Cart/> },
           
         ]
     }
