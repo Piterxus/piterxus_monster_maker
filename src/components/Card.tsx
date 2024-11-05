@@ -16,11 +16,11 @@ const Card = ({ documentId, price, imageSrc, name }: CardProps) => {
     const [imgSrc, setImgSrc] = useState<string | null>(null);
         const $cartItems = useStore(cartItems);
    
-        console.log("Cart item", Object.values($cartItems));
+        // console.log("Cart item", Object.values($cartItems));
         const itemIdToCheck = documentId; // o cualquier id que desees verificar
         const itemExists = Object.values($cartItems).some(item => item.id === itemIdToCheck);
 
-        console.log("Item exists in cart:", itemExists);
+        // console.log("Item exists in cart:", itemExists);
     useEffect(() => {
         async function fetchImage() {
             try {
