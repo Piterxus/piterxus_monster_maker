@@ -36,13 +36,13 @@ const Card = ({ documentId, price, imageSrc, name }: CardProps) => {
             <div className={styles.add_cart}>
                 <p>{price} €</p>
                 {itemExists ? <p>Item in cart</p> : ""}
-                <button onClick={handleAddToCart}>
+                <div onClick={handleAddToCart} style={{ cursor: "pointer" }}>
                     <Icon
                         Imgsrc="/imgs/skeleton_shopping_add_cart.png"
                         alt="Cart"
                         tooltipText="Add to cart"
                     />
-                </button>
+                </div>
             </div>
         </div>
     );
