@@ -1,29 +1,30 @@
-import { atom, map } from 'nanostores';
+import { persistentAtom } from '@nanostores/persistent';
 
-export const isCartOpen = atom(false);
-
-export type CartItem = {
+interface CartItem {
     id: string;
     name: string;
     imageSrc: string;
     price: number;
     quantity: number;
+}
+
+// Creamos el store persistente
+export const cartItems = persistentAtom<Record<string, CartItem>>('cartItems', {}, {
+    encode: JSON.stringify,
+    decode: JSON.parse
+});
+
+// Función para agregar un elemento al carrito
+export const addItemToCart = (item: CartItem) => {
+    cartItems.set({
+        ...cartItems.get(),
+        [item.id]: item
+    });
 };
 
-export type CartItemDisplayInfo = Pick<CartItem, 'id' | 'name' | 'imageSrc' | 'price'>;
-
-export const cartItems = map<Record<string, CartItem>>({});
-
-export function addCartItem({ id, name, imageSrc, price }: CartItemDisplayInfo) {
-    const existingEntry = cartItems.get()[id];
-
-    if (!existingEntry) {
-        cartItems.setKey(id, {
-                    id,
-                    name,
-                    imageSrc,
-                    price,
-                    quantity: 1,
-        });
-    } 
-}
+// Función para eliminar un elemento del carrito
+export const removeItemFromCart = (itemId: string) => {
+    const updatedCart = { ...cartItems.get() };
+    delete updatedCart[itemId];
+    cartItems.set(updatedCart);
+};

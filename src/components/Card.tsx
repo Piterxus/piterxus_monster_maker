@@ -3,7 +3,7 @@ import Icon from "../components/Icon.tsx";
 import AddToCartForm from "./AddToCartForm";
 import styles from "../styles/Card.module.css";
 import { useStore } from '@nanostores/react';
-import { cartItems } from '../cartStore';
+import { cartItems, addItemToCart } from '../cartStore';
 
 type CardProps = {
     documentId: string;
@@ -14,24 +14,16 @@ type CardProps = {
 
 const Card = ({ documentId, price, imageSrc, name }: CardProps) => {
     const [imgSrc, setImgSrc] = useState<string | null>(null);
-        const $cartItems = useStore(cartItems);
-   
-        // console.log("Cart item", Object.values($cartItems));
-        const itemIdToCheck = documentId; // o cualquier id que desees verificar
-        const itemExists = Object.values($cartItems).some(item => item.id === itemIdToCheck);
+    const $cartItems = useStore(cartItems);
 
-        // console.log("Item exists in cart:", itemExists);
+    const itemExists = !!$cartItems[documentId];
+
+    const handleAddToCart = () => {
+        addItemToCart({ id: documentId, price, name, imageSrc, quantity: 1 });
+    };
+
     useEffect(() => {
-        async function fetchImage() {
-            try {
-             
-
-                setImgSrc(imageSrc);
-            } catch (error) {
-                console.error("Error fetching image:", error);
-            }
-        }
-        fetchImage();
+        setImgSrc(imageSrc);
     }, [documentId]);
 
     return (
@@ -43,16 +35,14 @@ const Card = ({ documentId, price, imageSrc, name }: CardProps) => {
             )}
             <div className={styles.add_cart}>
                 <p>{price} €</p>
-                {(itemExists) ? <p>Item in cart</p> :  ""}
-                <AddToCartForm item={{ id: documentId, price, name, imageSrc: imgSrc || '' }}>
+                {itemExists ? <p>Item in cart</p> : ""}
+                <button onClick={handleAddToCart}>
                     <Icon
                         Imgsrc="/imgs/skeleton_shopping_add_cart.png"
                         alt="Cart"
                         tooltipText="Add to cart"
-                        buttonType="submit"
-                        id="cart"
                     />
-                </AddToCartForm>
+                </button>
             </div>
         </div>
     );

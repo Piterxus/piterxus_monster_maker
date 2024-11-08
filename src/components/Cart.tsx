@@ -1,10 +1,11 @@
 import styles from "../styles/Cart.module.css";
 import { useStore } from '@nanostores/react';
-import { cartItems } from '../cartStore';
+import { cartItems, removeItemFromCart } from '../cartStore';
 
 const Cart = () => {
     const $cartItems = useStore(cartItems);
     const cartItemsArray = Object.values($cartItems);
+
     return (
         <div>
             <h2>Cart</h2>
@@ -16,6 +17,7 @@ const Cart = () => {
                             <div>
                                 <p>{item.name}</p>
                                 <p>{item.price} €</p>
+                                <button onClick={() => removeItemFromCart(item.id)}>Remove</button>
                             </div>
                         </li>
                     ))}
