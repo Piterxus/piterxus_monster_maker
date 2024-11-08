@@ -1,6 +1,6 @@
 import { persistentAtom } from '@nanostores/persistent';
 
-interface CartItem {
+export interface CartItem {
     id: string;
     name: string;
     imageSrc: string;
@@ -8,7 +8,6 @@ interface CartItem {
     quantity: number;
 }
 
-// Creamos el store persistente
 export const cartItems = persistentAtom<Record<string, CartItem>>('cartItems', {}, {
     encode: JSON.stringify,
     decode: JSON.parse
