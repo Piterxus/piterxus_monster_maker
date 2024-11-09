@@ -1,24 +1,18 @@
 import { useStore } from '@nanostores/react';
-import { cartItems, isCartOpen } from '../cartStore';
-import styles from '../styles/CartFlyout.module.css';
+import { cartItems } from '../cartStore';
+
 
 export default function CartFlyout() {
-    const $isCartOpen = useStore(isCartOpen);
+  
     const $cartItems = useStore(cartItems);
 
     return (
         <>
             {Object.values($cartItems).length ? (
-                <p >Products in the cart:{ Object.values($cartItems).length} </p>
-                // <>
-                //     {Object.values($cartItems).map((cartItem) => (
+                <p >Products in the cart:{Object.values($cartItems).length} </p>
 
-                //         <p key={cartItem.id}>Products in the cart: {cartItem.quantity}</p>
-
-                //     ))}
-                // </>
             ) : (
-                // <p>Your cart is empty!</p>
+
 
                 <p >Your cart is empty!</p>
 
