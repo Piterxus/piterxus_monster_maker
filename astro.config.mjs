@@ -5,12 +5,5 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
-  vite: {
-    resolve: {
-      alias: {
-        '@styles': '/src/styles',
-      },
-      }
-  }
+  integrations: [react()]
 });
