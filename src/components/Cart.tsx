@@ -1,4 +1,4 @@
-import styles from "/src/styles/Cart.module.css";
+import styles from "./Cart.module.css";
 import { useStore } from '@nanostores/react';
 import { cartItems, removeItemFromCart } from '../cartStore';
 import Icon from "./Icon";
