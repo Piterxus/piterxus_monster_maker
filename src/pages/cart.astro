@@ -1,7 +1,10 @@
 ---
 import CartComponent from "../components/Cart.tsx";
 import IconLink from "../components/IconLink.tsx";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<CartComponent client:load />
-<IconLink to="/" linkText="arrow-left"  />
+<Layout title="Cart">
+  <CartComponent client:load />
+  <IconLink to="/" linkText="arrow-left" />
+</Layout>
