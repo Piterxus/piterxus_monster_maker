@@ -103,13 +103,14 @@ import { App } from "../components/App.tsx";
     color: white;
     font-size: 20px;
     line-height: 1.6;
-    height: 100%;
-    background: #d7c98c;
+    /* background: #d7c98c; */
+    /* height: 100%; */ /* Eliminar */
+    min-height: 100vh; /* Garantiza cubrir la altura del viewport */
     margin: auto;
-    background-image: url(/imgs/comic_texture.png);
-    background-repeat: no repeat;
+    background-image: url(/imgs/paper.svg);
+    background-repeat: no-repeat;
     background-size: cover;
-    background-blend-mode: multiply; /* Combina el color de fondo con la textura */
+    /*background-blend-mode: multiply;  Combina el color de fondo con la textura */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
