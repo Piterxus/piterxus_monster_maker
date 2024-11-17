@@ -17,7 +17,7 @@ img:hover {
 }
 
 .card_test {
-    background-color: #303224;
+    background-color: rgb(48, 50, 36, 0.6);
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
