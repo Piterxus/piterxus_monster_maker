@@ -30,7 +30,13 @@ const Cart = () => {
             ) : (
                 <p>Your cart is empty!</p>
             )}
-            <p>Total: {total} €</p>
+          <div className={styles.total}>
+                <p>Total: {total} €</p>
+                <a href="/" style={{ textDecoration: 'none' }}>
+                    back to home
+                </a>
+          </div>
+
         </div>
     );
 };
