@@ -19,6 +19,7 @@
 .empty{
     color: rgb(207, 205, 219);
     text-align: center;
+    -webkit-text-stroke: 0.5px black;
 }
 
 h2 {
