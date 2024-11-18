@@ -5,6 +5,8 @@
     width: 300px;
     margin-left: 300px;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
 
     a {
         color: rgb(207, 205, 219);
