@@ -28,7 +28,7 @@ const Cart = () => {
                     ))}
                 </ul>
             ) : (
-                <p>Your cart is empty!</p>
+                <p className={styles.empty}>Your cart is empty!</p>
             )}
           <div className={styles.total}>
                 <p>Total: {total} €</p>
