@@ -38,6 +38,11 @@ h2 {
     margin: 10px;
 }
 
+.header_cart{
+    display: flex;
+    justify-content: center;
+   
+}
 
 .cart_list {
     /* display: grid;

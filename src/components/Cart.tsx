@@ -10,7 +10,18 @@ const Cart = () => {
 
     return (
         <div className={styles.cart_container}>
-            <h2>Your cart</h2>
+      <div className={styles.header_cart}>
+                <h2>Your cart</h2>
+                <Icon
+                    Imgsrc="/imgs/home.png"
+                    alt="Cart"
+                    tooltipText="Back to home"
+                    id="home"
+                    buttonType="button"
+                    route="/"
+
+                />
+      </div>
             {cartItemsArray.length ? (
                 <ul className={styles.cart_list}>
                     {cartItemsArray.map((item) => (
@@ -32,9 +43,7 @@ const Cart = () => {
             )}
           <div className={styles.total}>
                 <p>Total: {total} €</p>
-                <a href="/" style={{ textDecoration: 'none' }}>
-                    back to home
-                </a>
+         
           </div>
 
         </div>
