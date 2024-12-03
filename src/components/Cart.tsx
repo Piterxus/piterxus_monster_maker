@@ -10,7 +10,7 @@ const Cart = () => {
 
     return (
         <div className={styles.cart_container}>
-      <div className={styles.header_cart}>
+            <div className={styles.header_cart}>
                 <h1>Your cart</h1>
                 <Icon
                     Imgsrc="/imgs/home.png"
@@ -21,34 +21,37 @@ const Cart = () => {
                     route="/"
 
                 />
-      </div>
+            </div>
             {cartItemsArray.length ? (
-                <ul className={styles.cart_list}>
-                    {cartItemsArray.map((item) => (
-                        <li key={item.id} className={styles.cart_item}>
-                            <img src={item.imageSrc} alt="Product" />
-                            <div className={styles.item_info} onClick={() => removeItemFromCart(item.id)}>
-                                <p>{item.price} €</p>
-                                <Icon
-                                    Imgsrc="/imgs/skeleton_shopping_remove_cart.png"
-                                    alt="Cart"
-                                    tooltipText="Remove to cart"
-                                />
-                            </div>
-                        </li>
-                    ))}
-                </ul>
+                <>
+                    <ul className={styles.cart_list}>
+                        {cartItemsArray.map((item) => (
+                            <li key={item.id} className={styles.cart_item}>
+                                <img src={item.imageSrc} alt="Product" />
+                                <div className={styles.item_info} onClick={() => removeItemFromCart(item.id)}>
+                                    <p>{item.price} €</p>
+                                    <Icon
+                                        Imgsrc="/imgs/skeleton_shopping_remove_cart.png"
+                                        alt="Cart"
+                                        tooltipText="Remove to cart"
+                                    />
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className={styles.total}>
+                        <h2>Total: {total} €</h2>
+                        <Icon
+                            Imgsrc="/imgs/buy.png"
+                            alt="Buy icon"
+                            tooltipText="Buy!"
+                        />
+                    </div>
+                </>
             ) : (
                 <h1 className={styles.empty}>Your cart is empty!</h1>
             )}
-          <div className={styles.total}>
-                <h2>Total: {total} €</h2>
-                <Icon
-                    Imgsrc="/imgs/buy.png"
-                    alt="Buy icon"
-                    tooltipText="Buy!"
-                />
-          </div>
+   
 
         </div>
     );
