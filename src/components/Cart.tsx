@@ -11,7 +11,7 @@ const Cart = () => {
     return (
         <div className={styles.cart_container}>
       <div className={styles.header_cart}>
-                <h2>Your cart</h2>
+                <h1>Your cart</h1>
                 <Icon
                     Imgsrc="/imgs/home.png"
                     alt="Cart"
