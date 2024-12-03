@@ -53,37 +53,29 @@ import { App } from "../components/App.tsx";
 <style>
   /* Estilo global */
 
-
   header {
     text-align: center;
     background-color: #2e2e2e;
     color: #a8a270;
     padding: 1rem;
-    /* position: sticky; */
-    top: 0;
-    z-index: 10;
     width: 100%;
-
     background-image: url(/imgs/comic_texture.png);
     background-repeat: repeat;
     background-size: contain;
     background-blend-mode: multiply; /* Combina el color de fondo con la textura */
+    box-sizing: border-box; /* Asegura que padding no afecta el tamaño total */
   }
 
   .header_2 {
-    background-color: rgb(175, 168, 116, 0.9);
+    background-color: rgba(175, 168, 116, 0.9);
     color: #303224;
     padding: 1rem;
     text-align: center;
-    top: 5rem;
-    z-index: 9;
     width: 100%;
-    /* background-image: url(/imgs/comic_texture.png);
-    background-repeat: repeat;
-    background-size: contain;
-    background-blend-mode: multiply;  */
+    box-sizing: border-box; /* Asegura que padding no afecta el tamaño total */
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si no caben */
   }
 
   /* Main content */
@@ -92,22 +84,22 @@ import { App } from "../components/App.tsx";
     color: white;
     font-size: 20px;
     line-height: 1.6;
-    /* background: #d7c98c; */
-    /* height: 100%; */ /* Eliminar */
-    min-height: 100vh; /* Garantiza cubrir la altura del viewport */
-    margin: auto;
-    /* background-image: url(/imgs/wp3.jpg); */
-    /* background-repeat: no-repeat; */
-    /* background-size: 70%; */
-    /*background-blend-mode: multiply;  Combina el color de fondo con la textura */
+    min-height: 100vh; /* Ocupa toda la altura del viewport */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    max-width: 1200px; /* Opcional: Limita el ancho máximo */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
+    box-sizing: border-box; /* Asegura que padding no afecta el tamaño total */
   }
+
+  /* Ajustes para íconos */
   .icons {
     margin-left: 15px;
     display: flex;
   }
+
+  /* Estilos de encabezados */
   h1 {
     font-size: 2.5rem;
   }
@@ -117,17 +109,32 @@ import { App } from "../components/App.tsx";
     font-size: 1.2rem;
   }
 
+  /* Estilos responsivos */
+
+  
+
   @media (max-width: 768px) {
     h1 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
 
     h2,
     h3 {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
-    .header_2{
-      flex-direction: column;
+    main {
+      display: flex; /* Cambia a Flexbox para centrar completamente el contenido */
+      flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+      justify-content: center; /* Centra verticalmente */
+      align-items: center; /* Centra horizontalmente */
+      min-height: calc(
+        100vh - 10rem
+      ); /* Ajusta la altura restando espacio reservado para el header */
+      gap: 1rem; /* Reduce el espacio entre elementos para pantallas pequeñas */
+    }
+
+    .header_2 {
+      flex-direction: column; /* Ajusta los elementos en columna para pantallas pequeñas */
     }
   }
 </style>
