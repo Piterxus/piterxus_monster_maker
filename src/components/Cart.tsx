@@ -42,8 +42,12 @@ const Cart = () => {
                 <h1 className={styles.empty}>Your cart is empty!</h1>
             )}
           <div className={styles.total}>
-                <p>Total: {total} €</p>
-         
+                <h2>Total: {total} €</h2>
+                <Icon
+                    Imgsrc="/imgs/buy.png"
+                    alt="Buy icon"
+                    tooltipText="Buy!"
+                />
           </div>
 
         </div>

@@ -1,17 +1,4 @@
-.total {
-    color: rgb(207, 205, 219);
-    text-align: center;
-    width: 300px;
-    margin-top: 20px;
-    /* Añadir margen superior para separarlo de los elementos anteriores */
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    /* Centra el contenido dentro del div .total */
-    align-items: center;
-    /* Centra el contenido verticalmente dentro del div .total */
-    font-weight: medium;
-}
+
 
 .empty {
     color: rgb(207, 205, 219);
@@ -94,4 +81,19 @@ img {
     justify-content: space-between;
     align-items: center;
     color: rgb(207, 205, 219);
+}
+
+.total {
+    color: rgb(207, 205, 219);
+    text-align: center;
+    width: 300px;
+    margin-top: 20px;
+    /* Añadir margen superior para separarlo de los elementos anteriores */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    /* Centra el contenido dentro del div .total */
+    align-items: center;
+    /* Centra el contenido verticalmente dentro del div .total */
+    font-weight: medium;
 }
