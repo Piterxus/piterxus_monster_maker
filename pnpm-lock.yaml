@@ -20,6 +20,9 @@ importers:
       '@nanostores/react':
         specifier: ^0.8.0
         version: 0.8.2(nanostores@0.11.3)(react@18.3.1)
+      '@stripe/stripe-js':
+        specifier: ^5.2.0
+        version: 5.2.0
       '@types/react':
         specifier: ^18.3.11
         version: 18.3.14
@@ -759,6 +762,10 @@ packages:
 
   '@shikijs/vscode-textmate@9.3.0':
     resolution: {integrity: sha512-jn7/7ky30idSkd/O5yDBfAnVt+JJpepofP/POZ1iMOxK59cOfqIgg/Dj0eFsjOTMw+4ycJN0uhZH/Eb0bs/EUA==}
+
+  '@stripe/stripe-js@5.2.0':
+    resolution: {integrity: sha512-2ZpEaezx3S0QPtnske175NDaLvUvaVKd4ePHpUN0QF/uV4BBBBRUy5BvQONDym+utbbW0QhSJoiRPnp4FS+4Vg==}
+    engines: {node: '>=12.16'}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -2628,6 +2635,8 @@ snapshots:
       '@types/hast': 3.0.4
 
   '@shikijs/vscode-textmate@9.3.0': {}
+
+  '@stripe/stripe-js@5.2.0': {}
 
   '@types/babel__core@7.20.5':
     dependencies:
