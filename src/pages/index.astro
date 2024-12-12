@@ -4,9 +4,9 @@ import Icon from "../components/Icon.tsx";
 import CartFlyout from "../components/CartFlyout";
 import CardContainer from "../components/CardContainer";
 import { App } from "../components/App.tsx";
-const handleCartClick = () => {
-  alert("Redirecting to cart...");
-};
+// const handleCartClick = () => {
+//   alert("Redirecting to cart...");
+// };
 ---
 
 <Layout title="Piterxus Monster Maker">
@@ -23,13 +23,22 @@ const handleCartClick = () => {
     </h3>
     <div class="icons">
       <CartFlyout client:load />
-      <Icon
+      <!-- <Icon
         Imgsrc="/imgs/skeleton_shopping_cart.png"
         alt="Cart"
         tooltipText="Cart"
         id="cart"
         buttonType="button"
         onClick={handleCartClick}
+        route="/cart"
+        client:load
+      /> -->
+      <Icon
+        Imgsrc="/imgs/skeleton_shopping_cart.png"
+        alt="Cart"
+        tooltipText="Cart"
+        id="cart"
+        buttonType="button"
         route="/cart"
         client:load
       />
