@@ -8,6 +8,12 @@ const Cart = () => {
     const cartItemsArray = Object.values($cartItems);
     const total = cartItemsArray.reduce((acc, item) => acc + item.price, 0);
 
+    const handleBuy = () => {
+        // Aquí puedes agregar lógica para manejar la compra
+        console.log("Compra realizada con éxito", $cartItems);
+        // Limpiar el carrito, enviar datos al backend, etc.
+    };
+
     return (
         <div className={styles.cart_container}>
             <div className={styles.header_cart}>
@@ -45,6 +51,7 @@ const Cart = () => {
                             Imgsrc="/imgs/buy.png"
                             alt="Buy icon"
                             tooltipText="Buy!"
+                            onClick={handleBuy}
                         />
                     </div>
                 </>
