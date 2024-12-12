@@ -4,6 +4,9 @@ import Icon from "../components/Icon.tsx";
 import CartFlyout from "../components/CartFlyout";
 import CardContainer from "../components/CardContainer";
 import { App } from "../components/App.tsx";
+const handleCartClick = () => {
+  alert("Redirecting to cart...");
+};
 ---
 
 <Layout title="Piterxus Monster Maker">
@@ -26,6 +29,7 @@ import { App } from "../components/App.tsx";
         tooltipText="Cart"
         id="cart"
         buttonType="button"
+        onClick={handleCartClick}
         route="/cart"
         client:load
       />
@@ -110,8 +114,6 @@ import { App } from "../components/App.tsx";
   }
 
   /* Estilos responsivos */
-
-  
 
   @media (max-width: 768px) {
     h1 {
