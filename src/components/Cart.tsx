@@ -34,12 +34,13 @@ const Cart = () => {
                         {cartItemsArray.map((item) => (
                             <li key={item.id} className={styles.cart_item}>
                                 <img src={item.imageSrc} alt="Product" />
-                                <div className={styles.item_info} onClick={() => removeItemFromCart(item.id)}>
+                                <div className={styles.item_info} >
                                     <p>{item.price} €</p>
                                     <Icon
                                         Imgsrc="/imgs/skeleton_shopping_remove_cart.png"
                                         alt="Cart"
                                         tooltipText="Remove to cart"
+                                        onClick={() => removeItemFromCart(item.id)}
                                     />
                                 </div>
                             </li>
@@ -58,7 +59,7 @@ const Cart = () => {
             ) : (
                 <h1 className={styles.empty}>Your cart is empty!</h1>
             )}
-   
+
 
         </div>
     );
