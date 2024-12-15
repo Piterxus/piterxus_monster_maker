@@ -82,7 +82,7 @@ const Cart = () => {
                 <h1 className={styles.empty}>Your cart is empty!</h1>
             )}
 
-            {/* Renderiza el popup si está visible */}
+           
             {showPopup && (
                 <Popup
                     onClose={handleClosePopup}
