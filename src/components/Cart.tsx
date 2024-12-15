@@ -1,17 +1,39 @@
+import React, { useState } from "react";
 import styles from "./../styles/Cart.module.css";
 import { useStore } from '@nanostores/react';
 import { cartItems, removeItemFromCart } from '../cartStore';
 import Icon from "./Icon";
+import Popup from "./Popup";
 
 const Cart = () => {
     const $cartItems = useStore(cartItems);
     const cartItemsArray = Object.values($cartItems);
     const total = cartItemsArray.reduce((acc, item) => acc + item.price, 0);
 
+    const [showPopup, setShowPopup] = useState(false);
+
     const handleBuy = () => {
         // Aquí puedes agregar lógica para manejar la compra
         console.log("Compra realizada con éxito", $cartItems);
+        setShowPopup(true);
         // Limpiar el carrito, enviar datos al backend, etc.
+    };
+
+    const handleClosePopup = () => {
+        // Cierra el popup
+        setShowPopup(false);
+    };
+
+    const handleGuestCheckout = () => {
+        alert("Checkout como invitado.");
+        setShowPopup(false);
+        // Aquí puedes redirigir al flujo de compra para invitados
+    };
+
+    const handleRegisterCheckout = () => {
+        alert("Ir al registro.");
+        setShowPopup(false);
+        // Aquí puedes redirigir al formulario de registro
     };
 
     return (
@@ -60,7 +82,14 @@ const Cart = () => {
                 <h1 className={styles.empty}>Your cart is empty!</h1>
             )}
 
-
+            {/* Renderiza el popup si está visible */}
+            {showPopup && (
+                <Popup
+                    onClose={handleClosePopup}
+                    onGuestCheckout={handleGuestCheckout}
+                    onRegisterCheckout={handleRegisterCheckout}
+                />
+            )}
         </div>
     );
 };
