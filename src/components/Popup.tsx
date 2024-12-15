@@ -12,6 +12,7 @@ const Popup: React.FC<PopupProps> = ({ onClose, onGuestCheckout, onRegisterCheck
     return (
         <div className={styles.popup_overlay}>
             <div className={styles.popup_content}>
+                <img src="imgs/buy_jason2.png" alt="" />
                 <h3>¿Cómo quieres continuar?</h3>
                 <button onClick={onGuestCheckout} className={styles.guest_button}>
                     Continuar como invitado
