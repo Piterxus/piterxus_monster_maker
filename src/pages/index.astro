@@ -34,7 +34,7 @@ import IconGroup from "../components/IconGroup.tsx";
         route="/cart"
         client:load
       /> -->
-      <Icon
+      <!-- <Icon
         Imgsrc="/imgs/skeleton_shopping_cart.png"
         alt="Cart"
         tooltipText="Cart"
@@ -56,8 +56,8 @@ import IconGroup from "../components/IconGroup.tsx";
         tooltipText="Requests"
         id="requests"
         buttonType="button"
-      />
-      <!-- <IconGroup client:load /> -->
+      /> -->
+      <IconGroup client:load />
     </div>
   </div>
   <main>
@@ -161,14 +161,14 @@ import IconGroup from "../components/IconGroup.tsx";
   console.log("Price", price);
   console.log("DocumentId", documentId);
   console.log("Img_product", img_product[0].url);
-  if (requests) {
-    requests.addEventListener("click", () => {
-      alert("Requests are closed at the moment. Please try again later.");
-    });
-  }
-  if (contact) {
-    contact.addEventListener("click", () => {
-      alert("Contact me at");
-    });
-  }
+  // if (requests) {
+  //   requests.addEventListener("click", () => {
+  //     alert("Requests are closed at the moment. Please try again later.");
+  //   });
+  // }
+  // if (contact) {
+  //   contact.addEventListener("click", () => {
+  //     alert("Contact me at");
+  //   });
+  // }
 </script>

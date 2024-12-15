@@ -14,7 +14,8 @@ const Icon = ({ Imgsrc, alt, tooltipText, id, buttonType, route, onClick }: Icon
     const handleClick = () => {
         if (onClick) {
             onClick(); // Ejecuta la función pasada como propiedad si existe
-        } else if (route) {
+        }
+        if (route) {
             window.location.href = route; // Redirige si no se proporciona una función onClick
         }
     };
