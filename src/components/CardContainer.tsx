@@ -19,7 +19,9 @@ const CardContainer = () => {
 
     return (
         <>
-            {cardInfoMap.map((card) => (
+            {cardInfoMap
+            .filter((card) => card.productStatus !== 'reserved')
+            .map((card) => (
                 <Card
                     key={card.documentId}
                     documentId={card.documentId}
