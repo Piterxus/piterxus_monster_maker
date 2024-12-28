@@ -24,7 +24,7 @@ const updateItemStatus = async (documentId: CartItem["id"], status:string) => {
         });
         const data = await response.json();
         if (response.ok) {
-            console.log("Producto actualizado a disponible:", data);
+            console.log(`Producto actualizado a ${status}`, data);
         } else {
             console.error("Error al actualizar el producto:", data);
         }
