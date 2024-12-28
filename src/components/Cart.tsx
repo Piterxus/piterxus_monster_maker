@@ -24,7 +24,7 @@ const Cart = () => {
         console.log("Comprando los productos con IDs:", documentIds);
     
         try {
-            const response = await fetch("http://localhost:1337/api/card/bulk-reserve", {
+            const response = await fetch("http://localhost:1337/api/card/bulk-update", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
