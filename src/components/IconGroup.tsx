@@ -4,15 +4,15 @@ import Icon from '../components/Icon';
 
 const IconGroup: React.FC = () => {
     const handleCartClick = () => {
-        alert('Redirecting to cart...');
+       console.log('Redirecting to cart...');
     };
 
     const handleContactClick = () => {
-        alert('Contact me at...');
+        console.log('Contact me at...');
     };
 
     const handleRequestsClick = () => {
-        alert('Requests are closed at the moment. Please try again later.');
+        console.log('Requests are closed at the moment. Please try again later.');
     };
 
     return (

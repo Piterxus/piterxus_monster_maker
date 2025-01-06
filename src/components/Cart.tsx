@@ -58,14 +58,14 @@ const Cart = () => {
     };
 
     const handleGuestCheckout = () => {
-        alert("Checkout como invitado.");
+        console.log("Checkout como invitado.");
         setShowPopup(false);
         window.location.href = "/buy";
         // Aquí puedes redirigir al flujo de compra para invitados
     };
 
     const handleRegisterCheckout = () => {
-        alert("Ir al registro.");
+        console.log("Ir al registro.");
         setShowPopup(false);
         window.location.href = "/register";
         // Aquí puedes redirigir al formulario de registro
