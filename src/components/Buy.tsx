@@ -34,6 +34,10 @@ const Buy = () => {
                             <input type='text' id='address' name='address' required />
                         </div>
                         <div className={styles.inputContainer}>
+                            <label htmlFor='country'>Country:</label>
+                            <input type='text' id='country' name='country' required />
+                        </div>
+                        <div className={styles.inputContainer}>
                             <label htmlFor='city'>City:</label>
                             <input type='text' id='city' name='city' required />
                         </div>
