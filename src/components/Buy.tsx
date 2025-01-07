@@ -52,7 +52,7 @@ const Buy = () => {
             </div>
 
 
-                <button>Buy</button>
+                <button>Pay</button>
             </form>
         </div>
     );
