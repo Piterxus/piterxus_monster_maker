@@ -15,12 +15,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+    
 }
-span{
-    margin-right: 10px;
+label{
+    /* margin-right: 10px; */
     width: 100px;
+    font-size: larger;
+    text-align: center;
 }
 input{
     width: 300px;
