@@ -5,6 +5,7 @@ import styles from "../styles/Buy.module.css";
 
 const Buy = () => {
     const $cartItems = useStore(cartItems);
+    const total = Object.values($cartItems).reduce((acc, item) => acc + item.price, 0);
 
     if (Object.keys($cartItems).length === 0) {
         // return <p>No items in cart</p>;
@@ -52,6 +53,7 @@ const Buy = () => {
                         <option value="2">Debit Card</option>
                         <option value="3">Paypal</option>
                     </select>
+                <p>TOTAL: {total} €</p>
              </div>
             </div>
 
