@@ -28,3 +28,4 @@ pnpm-debug.log*
 
 # Ignore all API test files created with the Rest Client extension
 *.rest
+.codegpt

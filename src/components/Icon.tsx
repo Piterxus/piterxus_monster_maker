@@ -7,12 +7,16 @@ type IconProps = {
     id?: string;
     buttonType?: "button" | "submit" | "reset" | undefined;
     route?: string; // Agregas una prop para la ruta
+    onClick?: () => void;
 };
 
-const Icon = ({ Imgsrc, alt, tooltipText, id, buttonType, route }: IconProps) => {
+const Icon = ({ Imgsrc, alt, tooltipText, id, buttonType, route, onClick }: IconProps) => {
     const handleClick = () => {
+        if (onClick) {
+            onClick(); // Ejecuta la función pasada como propiedad si existe
+        }
         if (route) {
-            window.location.href = route; // Redirige al hacer clic
+            window.location.href = route; // Redirige si no se proporciona una función onClick
         }
     };
 
