@@ -1,6 +1,12 @@
 // const stripe = require('stripe')(import.meta.env.PUBLIC_STRIPE_SECRET_KEY);
 import Stripe from 'stripe';
-const stripe = new Stripe("sk_test_51R4gEpQvW8H7Sj6CctcEZpHz36I77eii2Zq6Nj7nJ6WkXJEY8lA4kzLAlMdbLBIsJJwd8NOJlVOFm1XsCsaTghPs00PT3vINpb", {
+import 'dotenv/config';
+const key = process.env.PUBLIC_STRIPE_SECRET_KEY;
+console.log(key);
+if (!key) {
+    throw new Error('❌ PUBLIC_STRIPE_SECRET_KEY no está definida en el archivo .env');
+}
+const stripe = new Stripe(key, {
     apiVersion: '2025-02-24.acacia',
 });
 async function createPaymentIntent(amount: number, currency: string) {
