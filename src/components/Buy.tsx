@@ -21,7 +21,9 @@ const Buy = () => {
     }
     return (
         <Elements stripe={stripePromise} options= {{clientSecret}}>
-            <PaymentForm />
+           <div className={styles.buyContainer}>
+                <PaymentForm />
+           </div>
         </Elements>
 
     );
