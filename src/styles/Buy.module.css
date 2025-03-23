@@ -1,5 +1,5 @@
 .buyContainer{
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
     width: 100%;
@@ -9,7 +9,7 @@
     align-items:baseline;
     justify-content: center;
     /* z-index: 1000; */
-    color: white;
+    
 }
 .buyInfo{
     display: flex;
@@ -49,8 +49,11 @@ form{
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-    width: 80%;
+    width: 80vw;
+    /* width: 80%; */
     background: rgba(0, 0, 0, 0.5);
+    overflow: sc;
+    
 }
 button{
     width: 100px;

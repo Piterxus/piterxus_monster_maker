@@ -12,7 +12,8 @@ const stripePromise = loadStripe(publishableKey);
 const Buy = () => {
     const $cartItems = useStore(cartItems);
     const total = Object.values($cartItems).reduce((acc, item) => acc + item.price, 0);
-    const clientSecret = "pi_3R54ddQvW8H7Sj6C1zkT8qpP_secret_Xxk5Vn3cYd77KCUXYnUWp60VI";
+    // const clientSecret = "pi_3R54ddQvW8H7Sj6C1zkT8qpP_secret_Xxk5Vn3cYd77KCUXYnUWp60VI";
+    const clientSecret = "pi_3R5pjhQvW8H7Sj6C1hdGwgD2_secret_Fj191cxg56xo9kzjYBGwmzOCB"
 
     if (Object.keys($cartItems).length === 0) {
         // return <p>No items in cart</p>;
@@ -20,7 +21,18 @@ const Buy = () => {
         window.location.href = "/";
     }
     return (
-        <Elements stripe={stripePromise} options= {{clientSecret}}>
+        <Elements stripe={stripePromise} options={{
+            clientSecret,
+            appearance: {
+                theme: 'stripe', // También puedes probar 'night', 'flat' o 'none'
+                variables: {
+                    // fontFamily: 'Arial, sans-serif',
+                    colorText: '#ffffff', // Color del texto de los labels e inputs
+                    // colorBackground: '#f8f8f8', // Color de fondo del formulario
+                    // colorPrimary: '#000', // Color de botones y acentos
+                }
+            }
+        }}>
            <div className={styles.buyContainer}>
                 <PaymentForm />
            </div>
