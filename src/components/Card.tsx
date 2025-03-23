@@ -21,9 +21,7 @@ const Card = ({ documentId, price, imageSrc, name }: CardProps) => {
     const handleAddToCart = () => {
         addItemToCart({ id: documentId, price, name, imageSrc, quantity: 1 });
     };
-    const handleRemoveFromCart = () => {
-        removeItemFromCart(documentId);
-    }
+
 
 
     useEffect(() => {
