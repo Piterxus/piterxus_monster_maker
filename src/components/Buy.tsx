@@ -24,7 +24,7 @@ const Buy = () => {
         <Elements stripe={stripePromise} options={{
             clientSecret,
             appearance: {
-                theme: 'stripe', // También puedes probar 'night', 'flat' o 'none'
+                theme: 'night', // También puedes probar 'night', 'flat' o 'none'
                 variables: {
                     // fontFamily: 'Arial, sans-serif',
                     colorText: '#ffffff', // Color del texto de los labels e inputs
