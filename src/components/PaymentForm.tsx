@@ -4,7 +4,10 @@ const PaymentForm = () => {
     return (
         <div>
             <h2>Payment</h2>
-            <PaymentElement />
+            <form>
+                <PaymentElement />
+                <button type="submit">Pay</button>
+            </form>
         </div>
     );
 };
