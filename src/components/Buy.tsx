@@ -13,7 +13,8 @@ const Buy = () => {
     const $cartItems = useStore(cartItems);
     const total = Object.values($cartItems).reduce((acc, item) => acc + item.price, 0);
     // const clientSecret = "pi_3R54ddQvW8H7Sj6C1zkT8qpP_secret_Xxk5Vn3cYd77KCUXYnUWp60VI";
-    const clientSecret = "pi_3R5pjhQvW8H7Sj6C1hdGwgD2_secret_Fj191cxg56xo9kzjYBGwmzOCB"
+    const clientSecret = "pi_3R6U1QQvW8H7Sj6C1rxW2wtl_secret_sakEbFaL2t0OKqrm5DlJaX1O9"
+    
 
     if (Object.keys($cartItems).length === 0) {
         // return <p>No items in cart</p>;
